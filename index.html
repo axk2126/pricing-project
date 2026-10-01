@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello, pricing!</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 2rem 1rem;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+      color: #1c2733;
+      background: #f5f7fa;
+    }
+    main { max-width: 40rem; margin: 0 auto; }
+    h1 { margin: 0 0 0.25rem; font-size: 2rem; }
+    .author { margin: 0 0 2rem; color: #5a6878; }
+    h2 { font-size: 1.1rem; margin: 0 0 0.75rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+    th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #e6eaf0; }
+    th { background: #1c2733; color: #fff; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    td.price { white-space: nowrap; font-weight: 600; }
+    footer { margin-top: 2rem; font-size: 0.85rem; color: #5a6878; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Hello, pricing!</h1>
+    <p class="author">Antea Kurtović</p>
+
+    <h2>NoteNest — plans</h2>
+    <table>
+      <thead>
+        <tr><th>Plan</th><th>Price</th><th>What you get</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Free</td><td class="price">€0 / month</td><td>Up to 50 notes, one device</td></tr>
+        <tr><td>Basic</td><td class="price">€4 / month</td><td>Unlimited notes, three devices</td></tr>
+        <tr><td>Pro</td><td class="price">€9 / month</td><td>Everything in Basic, plus sharing and offline mode</td></tr>
+      </tbody>
+    </table>
+
+    <footer>© 2026 NoteNest — student project, fictitious company</footer>
+  </main>
+</body>
+</html>
