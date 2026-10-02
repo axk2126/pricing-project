@@ -3,54 +3,298 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello, pricing!</title>
+  <title>Novčić Pay — the account for 18–26</title>
+  <meta name="description" content="Novčić Pay: a euro account and debit card for people aged 18 to 26. No monthly fee. Pay only for what you use.">
   <style>
+    :root {
+      --brand: #114E78;
+      --brand-dark: #0D2F49;
+      --ink: #0D2F49;
+      --muted: #55697C;
+      --paper: #F8FAFB;
+      --surface: #FFFFFF;
+      --hair: rgba(13, 47, 73, .13);
+      --soft: #DDEBF7;
+    }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      padding: 2rem 1rem;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.5;
-      color: #1c2733;
-      background: #f5f7fa;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--paper);
     }
-    main { max-width: 40rem; margin: 0 auto; }
-    h1 { margin: 0 0 0.25rem; font-size: 2rem; }
-    .author { margin: 0 0 2rem; color: #5a6878; }
-    h2 { font-size: 1.1rem; margin: 0 0 0.75rem; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(248, 250, 251, .94);
+      border-bottom: 1px solid var(--hair);
+      backdrop-filter: blur(6px);
     }
-    th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #e6eaf0; }
-    th { background: #1c2733; color: #fff; font-weight: 600; }
-    tr:last-child td { border-bottom: none; }
-    td.price { white-space: nowrap; font-weight: 600; }
-    footer { margin-top: 2rem; font-size: 0.85rem; color: #5a6878; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; flex-wrap: wrap; }
+    .logo { font-weight: 700; font-size: 22px; letter-spacing: -.02em; color: var(--brand-dark); text-decoration: none; padding: 10px 0; }
+    .logo span { color: var(--brand); }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; flex-wrap: wrap; }
+    nav a {
+      display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px;
+      color: var(--ink); text-decoration: none; font-weight: 500; border-radius: 8px;
+    }
+    nav a:hover { background: var(--soft); }
+    h1, h2, h3 { color: var(--brand-dark); letter-spacing: -.02em; line-height: 1.15; margin: 0 0 .5em; }
+    h1 { font-size: clamp(36px, 6vw, 60px); }
+    h2 { font-size: clamp(26px, 3.4vw, 36px); }
+    h3 { font-size: 20px; }
+    p { margin: 0 0 1em; }
+    .lead { font-size: 20px; color: var(--muted); max-width: 640px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px;
+      background: var(--brand); color: #fff; font-weight: 600; text-decoration: none; border-radius: 10px;
+      border: 2px solid var(--brand);
+    }
+    .btn:hover { background: var(--brand-dark); border-color: var(--brand-dark); }
+    .btn.ghost { background: transparent; color: var(--brand); }
+    .btn.ghost:hover { background: var(--soft); }
+    section { padding: 88px 0; }
+    section + section { border-top: 1px solid var(--hair); }
+    .hero { padding: 110px 0 90px; }
+    .hero .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+    .hero-card {
+      background: var(--surface); border: 1px solid var(--hair); border-radius: 20px; padding: 28px;
+      box-shadow: 0 10px 34px rgba(7, 28, 43, .06);
+    }
+    .hero-card .label { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .hero-card .big { font-size: 44px; font-weight: 700; color: var(--brand-dark); line-height: 1; margin-bottom: 4px; }
+    .hero-card .row { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid var(--hair); }
+    .hero-card .row:first-of-type { border-top: 0; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .card { background: var(--surface); border: 1px solid var(--hair); border-radius: 16px; padding: 28px; }
+    .card .num { display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center; border-radius: 50%; background: var(--soft); color: var(--brand-dark); font-weight: 700; margin-bottom: 14px; }
+    .intro { max-width: 680px; color: var(--muted); margin-bottom: 36px; }
+    /* pricing */
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+    .plan { background: var(--surface); border: 1px solid var(--hair); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; position: relative; }
+    .plan.recommended { border: 2px solid var(--brand); box-shadow: 0 16px 44px rgba(17, 78, 120, .14); }
+    .plan .tag { position: absolute; top: -14px; left: 24px; background: var(--brand); color: #fff; font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 999px; letter-spacing: .04em; }
+    .plan h3 { margin-bottom: 4px; }
+    .plan .for { color: var(--muted); font-size: 15px; min-height: 48px; margin-bottom: 14px; }
+    .plan .price { font-size: 40px; font-weight: 700; color: var(--brand-dark); line-height: 1; }
+    .plan .unit { color: var(--muted); font-size: 15px; margin-bottom: 18px; }
+    .plan ul { list-style: none; padding: 0; margin: 0 0 24px; flex: 1; }
+    .plan li { padding: 8px 0; border-top: 1px solid var(--hair); font-size: 15.5px; }
+    .plan li:first-child { border-top: 0; }
+    .plan li strong { color: var(--brand-dark); }
+    .plan .btn { width: 100%; }
+    .conditions { margin-top: 22px; font-size: 14.5px; color: var(--muted); }
+    .value { font-size: 19px; color: var(--muted); max-width: 720px; margin-bottom: 36px; }
+    .compare { margin-top: 44px; background: var(--surface); border: 1px solid var(--hair); border-radius: 16px; padding: 24px 28px; }
+    .compare table { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+    .compare th, .compare td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--hair); }
+    .compare th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+    .compare td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .compare tr.us td { font-weight: 700; color: var(--brand-dark); }
+    .compare .note { font-size: 14px; color: var(--muted); margin: 12px 0 0; }
+    /* faq */
+    .faq details { background: var(--surface); border: 1px solid var(--hair); border-radius: 12px; padding: 4px 20px; margin-bottom: 12px; }
+    .faq summary { cursor: pointer; font-weight: 600; min-height: 44px; display: flex; align-items: center; }
+    .faq p { color: var(--muted); margin: 4px 0 14px; }
+    /* contact */
+    .contact .card { max-width: 560px; }
+    .contact a { color: var(--brand); font-weight: 600; word-break: break-all; }
+    footer { border-top: 1px solid var(--hair); padding: 32px 0; color: var(--muted); font-size: 14.5px; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); }
+    @media (max-width: 900px) {
+      .hero .wrap, .grid3, .plans { grid-template-columns: 1fr; }
+      .hero { padding: 72px 0 60px; }
+      section { padding: 64px 0; }
+    }
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      .wrap { padding: 0 16px; }
+      nav ul { gap: 0; width: 100%; }
+      nav a { padding: 0 10px; min-height: 44px; font-size: 15px; }
+      .plan .price { font-size: 36px; }
+      .hero-card .big { font-size: 38px; }
+      .compare { padding: 16px; overflow-x: auto; }
+      .compare table { min-width: 520px; }
+      .btn { min-height: 48px; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Hello, pricing!</h1>
-    <p class="author">Antea Kurtović</p>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#top">Novčić<span>Pay</span></a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <h2>NoteNest — plans</h2>
-    <table>
-      <thead>
-        <tr><th>Plan</th><th>Price</th><th>What you get</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Free</td><td class="price">€0 / month</td><td>Up to 50 notes, one device</td></tr>
-        <tr><td>Basic</td><td class="price">€4 / month</td><td>Unlimited notes, three devices</td></tr>
-        <tr><td>Pro</td><td class="price">€9 / month</td><td>Everything in Basic, plus sharing and offline mode</td></tr>
-      </tbody>
-    </table>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <h1>No monthly fee. Pay only for what you use.</h1>
+          <p class="lead">A euro account and debit card for everyone aged 18 to 26 in Croatia. Instant transfers to friends, savings goals, and a price list you can read in one minute.</p>
+          <a class="btn" href="#pricing">See the pricing</a>
+        </div>
+        <div class="hero-card" aria-label="Account at a glance">
+          <div class="label">Novčić Basic</div>
+          <div class="big">€0.00</div>
+          <div class="unit">monthly fee</div>
+          <div class="row"><span>Cash withdrawal</span><strong>€1.50 each</strong></div>
+          <div class="row"><span>Payments in other currencies</span><strong>1.5% above ECB rate</strong></div>
+          <div class="row"><span>Transfers to friends</span><strong>included</strong></div>
+        </div>
+      </div>
+    </section>
 
-    <footer>© 2026 NoteNest — student project, fictitious company</footer>
+    <section id="benefits">
+      <div class="wrap">
+        <h2>Why Novčić Pay</h2>
+        <p class="intro">Built for the way people aged 18 to 26 actually use money: a card for everyday payments, a quick way to split a bill, and a place to save for the next trip.</p>
+        <div class="grid3">
+          <div class="card">
+            <h3>Nothing to pay for holding the account</h3>
+            <p>The account and the debit card cost €0 a month. You pay only for cash withdrawals and for payments in other currencies, and every fee is shown before you confirm.</p>
+          </div>
+          <div class="card">
+            <h3>Instant transfers to friends</h3>
+            <p>Split the dinner, the rent or the festival tickets in seconds. Money arrives instantly between Novčić Pay accounts.</p>
+          </div>
+          <div class="card">
+            <h3>Savings goals that stick</h3>
+            <p>Set a goal, put money aside automatically, and watch it grow. The plans add shared accounts, virtual cards and a travel package when you need them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <div class="grid3">
+          <div class="card"><div class="num">1</div><h3>Open the account in the app</h3><p>Confirm your identity with your ID card. Before you open it, you receive the fee information document that lists every fee.</p></div>
+          <div class="card"><div class="num">2</div><h3>Get your euro account and card</h3><p>Your account is ready at once; the debit card follows by post. Use the virtual card in the meantime if you choose Plus or Travel.</p></div>
+          <div class="card"><div class="num">3</div><h3>Pay, transfer and save</h3><p>Pay with the card, send money to friends instantly and set your savings goals. Add Plus or Travel at any time, and cancel monthly.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <h2>Pricing</h2>
+        <p class="value">Keep the account at €0 — add Plus or Travel when you need more.</p>
+        <div class="plans">
+          <div class="plan">
+            <h3>Basic</h3>
+            <div class="for">For everyone aged 18–26; the default account</div>
+            <div class="price">€0.00</div>
+            <div class="unit">per month</div>
+            <ul>
+              <li>Euro account and debit card</li>
+              <li>Instant transfers to friends</li>
+              <li>Savings goals</li>
+              <li>Cash withdrawal <strong>€1.50</strong> each</li>
+              <li>Payments in other currencies <strong>1.5% above the ECB rate</strong></li>
+            </ul>
+            <a class="btn ghost" href="#contact">Choose Basic</a>
+          </div>
+          <div class="plan">
+            <h3>Plus</h3>
+            <div class="for">For people who use cash and want more control over their money</div>
+            <div class="price">€3.99</div>
+            <div class="unit">per month</div>
+            <ul>
+              <li>Everything in Basic</li>
+              <li><strong>3 cash withdrawals a month included</strong>, then €1.50 each</li>
+              <li>Shared accounts</li>
+              <li>Virtual cards</li>
+              <li>Payments in other currencies 1.5% above the ECB rate</li>
+            </ul>
+            <a class="btn ghost" href="#contact">Choose Plus</a>
+          </div>
+          <div class="plan recommended">
+            <div class="tag">Recommended</div>
+            <h3>Travel</h3>
+            <div class="for">For people who study or work abroad or travel often</div>
+            <div class="price">€6.99</div>
+            <div class="unit">per month</div>
+            <ul>
+              <li>Everything in Plus</li>
+              <li><strong>0% above the ECB rate</strong> on payments in other currencies</li>
+              <li><strong>Cash withdrawals worldwide included</strong></li>
+              <li><strong>Travel insurance included</strong></li>
+            </ul>
+            <a class="btn" href="#contact">Choose Travel</a>
+          </div>
+        </div>
+        <p class="conditions">Plans are billed monthly and can be cancelled at the end of any month. Travel is also available for a year at €69.90 (the price of ten months). Account fees are exempt from VAT; all prices are final.</p>
+
+        <div class="compare" aria-label="Comparison for a typical travelling month">
+          <h3>What a typical travelling month costs</h3>
+          <p class="note">€800 of card payments, €400 of them in other currencies, two cash withdrawals abroad, and travel insurance. Published prices of the alternatives as named in our market study; your own usage may differ.</p>
+          <table>
+            <thead><tr><th>Account</th><th class="n">Currency fees</th><th class="n">Withdrawals</th><th class="n">Insurance</th><th class="n">Per month</th></tr></thead>
+            <tbody>
+              <tr class="us"><td>Novčić Travel</td><td class="n">€0.00</td><td class="n">€0.00</td><td class="n">included</td><td class="n">€6.99</td></tr>
+              <tr><td>Novčić Basic (pay per use)</td><td class="n">€6.00</td><td class="n">€3.00</td><td class="n">about €4.00</td><td class="n">€13.00</td></tr>
+              <tr><td>International app, no plan</td><td class="n">€4.00</td><td class="n">€4.00</td><td class="n">about €4.00</td><td class="n">€12.00</td></tr>
+              <tr><td>Bank account package</td><td class="n">€10.00</td><td class="n">€2.00–4.00</td><td class="n">about €4.00</td><td class="n">€19.00–23.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <h2>Questions</h2>
+        <details>
+          <summary>Is the Basic account free?</summary>
+          <p>The Basic account has no monthly fee. You pay €1.50 for each cash withdrawal and 1.5% above the ECB reference rate on payments in other currencies, so we do not call it free. Everything else in Basic is included.</p>
+        </details>
+        <details>
+          <summary>How do I see the fees before I pay?</summary>
+          <p>Before you open the account you receive a fee information document that lists every fee under its standard name. In the app, the currency conversion fee is shown as a percentage above the ECB reference rate before you confirm a payment. Once a year you receive a statement of all fees you paid.</p>
+        </details>
+        <details>
+          <summary>Can I switch between Basic, Plus and Travel?</summary>
+          <p>Yes. Plans are billed monthly and can be cancelled at the end of any month; you then return to Basic. If you choose the annual Travel plan, it runs for twelve months at €69.90.</p>
+        </details>
+        <details>
+          <summary>What happens to the 3 included withdrawals in Plus?</summary>
+          <p>The first three cash withdrawals in a calendar month are included in Plus. From the fourth withdrawal the Basic fee of €1.50 applies. In Travel, cash withdrawals worldwide are included.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <div class="card">
+          <p>Questions about the account or the plans? Write to us and we answer within one working day.</p>
+          <p><a href="mailto:hello@novcicpay.example">hello@novcicpay.example</a></p>
+          <p style="margin:0;color:var(--muted);font-size:15px">Novčić Pay d.o.o., Zagreb — a licensed e-money company.</p>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Novčić Pay — student project, fictitious company</span>
+      <a href="dashboard/">Pricing analysis</a>
+    </div>
+  </footer>
 </body>
 </html>

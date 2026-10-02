@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mission to dashboard, one chain. — Novčić Pay pricing</title>
+<meta name="description" content="Novčić Pay pricing strategy 2027 — Mission to dashboard, one chain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">Novčić Pay <span>· pricing strategy 2027</span></a>
+    <nav class="menu" aria-label="Dashboard pages"><a href="index.html">Executive</a><a href="methodology.html" class=cur>Methodology</a><a href="customers.html">Customers</a><a href="kpis.html">KPIs</a><a href="pricing.html">Pricing</a><a href="scenarios.html">Scenarios</a><a href="benchmark.html">Benchmark</a><a href="recommendation.html">Recommendation</a></nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Methodology · how the numbers were made</div>
+    <h1>Mission to dashboard, one chain.</h1>
+    <p class="lead">Every KPI follows from an objective, every price point from a KPI, every number from the case sheet. Two independent calculations agree to the cent.</p>
+  </section>
+  
+<section><h2>The logic of the project</h2><div class="chain"><span class="on">Mission / Vision</span><i>→</i><span class="on">Strategic objectives</span><i>→</i><span class="on">KPIs</span><i>→</i><span class="on">Pricing strategy</span><i>→</i><span class="on">Financial impact</span><i>→</i><span class="">Dashboard</span</div>
+<div class="grid2">
+<article class="card plain"><h3>From mission to dashboard</h3><p>The chain follows the Balanced Scorecard logic taught in Quantitative Methods for Managers (Pirić): <em>Mission → Values → Vision → Strategy → Objectives → KPIs → Targets → Initiatives</em>. Pricing is the main initiative: each price point is chosen to move a KPI that follows from an objective, not the other way round.</p><p>The pricing itself follows the strategic pricing pyramid of Price Management (Nagle &amp; Müller 2018): value creation → price structure → value communication → pricing policy → price level → competition.</p></article>
+<article class="card plain"><h3>Data</h3><div class="tablewrap"><table class=""><thead><tr><th>Source</th><th>What it gives</th><th>Status</th></tr></thead><tbody><tr><td>Case sheet, Case Book p. 7</td><td>segments, usage, survey of 2,000 customers, costs, competitors, EU rules</td><td>source of truth</td></tr><tr><td>Handouts 03, 04, 05, 07</td><td>economic value, structure and fences, communication, price level and breakeven</td><td>concepts and formulas</td></tr><tr><td>Public price lists (Revolut, Wise, Trade Republic, PBZ)</td><td>benchmark for the price level</td><td>accessed 02.10.2026, kept separate from case facts</td></tr><tr><td>EU law (EUR-Lex)</td><td>interchange cap, fee information document, ECB mark-up, 'free'</td><td>verified by article</td></tr></tbody></table></div></article>
+</div></section>
+<section><h2>How the model works</h2>
+<div class="grid2">
+<article class="card "><h3>Each segment is followed through its choices</h3><ol class='steps'><li>At the chosen plan price, the survey share buys the plan (no interpolation between surveyed points).</li><li>Everyone else stays on Basic and pays per use, except the survey share who leave because of per-use fees. That churn applies to those who actually pay the fees.</li><li>Contribution = income (interchange 0.2%, plan fees, per-use fees) − variable cost (€0.60 account, €1.00 per withdrawal, 0.3% of currency payments, €0.50 insurance).</li><li>Totals × 12 months, minus €700,000 fixed costs.</li><li>Segments are independent, so the best price is chosen one segment at a time, then the structure is compared with the alternatives.</li></ol></article>
+<article class="card "><h3>Formulas from the course</h3><div class="tablewrap"><table class=""><thead><tr><th>Formula</th><th>Used for</th></tr></thead><tbody><tr><td>EVC = reference value + positive − negative differentiation value (H03)</td><td>ceiling of the Travel plan: €12.00</td></tr><tr><td>Share captured = (P − ref) / (EVC − ref) (H03)</td><td>Plus at €3.99 captures 50% of the differentiation value</td></tr><tr><td>Contribution = Σ (P − VC) × Q; gain = C / C_one price − 1 (H04)</td><td>structure comparison: +13.7% vs one fee, +28.7% vs per use only</td></tr><tr><td>Breakeven sales change = −ΔP / (CM + ΔP) (H07)</td><td>every alternative price point fails the test</td></tr><tr><td>Break-even volume = FC / (P − VC) (H07)</td><td>30,231 customers at the blended €1.93 a month</td></tr><tr><td>Reactive breakeven = ΔP / CM (H08)</td><td>matching a Fluxa cut pays only above 23.3% subscribers at risk</td></tr></tbody></table></div></article>
+</div></section>
+<section><h2>Verification</h2>
+<div class="grid2">
+<article class="card accent"><h3>Two independent calculations</h3><p>The workbook (live formulas, 11 sheets) and a Python script compute the same model from the same inputs. The workbook was recalculated headlessly and 25 totals were compared with the script: <strong>maximum difference €0.00</strong>. The dashboard is generated from the script, so every figure here is the same figure as in the workbook.</p></article>
+<article class="card "><h3>Assumptions not on the case sheet</h3><div class="tablewrap"><table class=""><thead><tr><th>Assumption</th><th>Tested range</th><th>Effect on profit</th></tr></thead><tbody><tr><td>Nobody withdraws less cash once a withdrawal costs €1.50</td><td>25–75% fewer withdrawals</td><td>€176k → €16k at 75%</td></tr><tr><td>Shared accounts and virtual cards cost nothing extra</td><td>€0.25–0.50 per subscriber</td><td>→ €136k at €0.50</td></tr><tr><td>Plus subscribers withdraw as often as the segment average (cap of 3)</td><td>1.5×–2×</td><td>→ €38k at 2×</td></tr><tr><td>Per-use churn applies to non-buyers only</td><td>×0.5–×2</td><td>€219k / €130k</td></tr><tr><td>Differentiation value of Travel against Fluxa = 0</td><td>conservative</td><td>no effect on the numbers; lowers the stated ceiling</td></tr></tbody></table></div></article>
+</div></section>
+<section><h2>Limitations to say out loud</h2><article class="card plain"><h3>What the case cannot tell us</h3><ul><li>The churn for ‘a monthly fee’ was asked without a fee level, so the flat-fee alternative is only credible up to about €4.</li><li>No data on how withdrawal behaviour responds to a fee; this is the biggest sensitivity and the first KPI to watch.</li><li>No lifetime value: the case gives no ageing of students into employees, although that pipeline is the economic reason to keep students at €0.</li><li>Take-up is known at three price points per segment only; €7.99 for Travel is not modelled (linear interpolation would give ≈ 50% and €176k, marginally above €6.99).</li></ul></article></section>
+
+  <nav class="pager"><a href="index.html">← Executive dashboard</a><a href="customers.html">Customer insights →</a></nav>
+</main>
+<footer class="wrap foot">
+  <span>© 2026 Novčić Pay — student project, fictitious company. Price Management, ZSEM MBA 2026/27, case 05.</span>
+  <span>All figures from the case sheet (Case Book p. 7) and the pricing model; benchmark figures from public price lists, accessed 02.10.2026.</span>
+</footer>
+</body>
+</html>
