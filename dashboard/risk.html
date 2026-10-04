@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risk and scenarios · Novčić Pay pricing strategy 2027</title>
+<meta name="description" content="Novčić Pay pricing strategy 2027: Try the assumptions yourself; switching values, a simulation and three what-ifs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=8e85ceaf">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">Novčić Pay <span>pricing strategy 2027</span></a>
+    <nav class="menu" aria-label="Dashboard pages"><a href="index.html">Overview</a><a href="customers.html">1 Customers</a><a href="pricing.html">2 Pricing</a><a href="numbers.html">3 Numbers</a><a href="presentation.html">4 Presentation</a><a href="risk.html" class=cur aria-current=page>Risk</a><a href="benchmark.html">Benchmark</a><a href="kpis.html">KPIs</a><a href="methodology.html">Method</a></nav>
+  </div>
+</header>
+<main class="wrap" id="main">
+  <section class="hero">
+    <div class="eyebrow">Evidence · Risk and scenarios</div>
+    <h1>What could break it.</h1>
+    <p class="lead">The base case takes the survey at face value. This page asks how wrong it can be: one assumption at a time, all at once, and under three events from outside.</p>
+  </section>
+  
+<div class="tiles"><div class="tile"><div class="mono">Base case</div><div class="big">€176k</div><div class="sub">the survey at face value, behaviour unchanged</div></div><div class="tile"><div class="mono">Median, 5 assumptions varied</div><div class="big">€53k</div><div class="sub">mean €51k; 5th–95th percentile −€28k to €122k</div></div><div class="tile"><div class="mono">Chance of a loss</div><div class="big">14%</div><div class="sub">one fee for everyone: 69%; fees per use only: 97%</div></div><div class="tile"><div class="mono">Tightest limit</div><div class="big">€1.28</div><div class="sub">cost per withdrawal at which profit is zero if the fee stays at €1.50</div></div></div>
+<section id="simulator"><h2>Move the assumptions yourself</h2><p class="intro">Every assumption that is not a case fact can be changed here. Start with the first slider: it is the one the case says least about.</p><article class="card "><h3>What happens to the 2027 profit</h3>
+<div class="sim" id="sim">
+  <div class="ctl">
+    <label>Withdrawals that Basic customers avoid <output id="o_wd"></output><input type="range" id="i_wd" min="0" max="100" step="5" value="0"></label>
+    <label>Plan take-up against the survey <output id="o_tu"></output><input type="range" id="i_tu" min="50" max="130" step="5" value="100"></label>
+    <label>Per-use churn against the survey <output id="o_ch"></output><input type="range" id="i_ch" min="50" max="300" step="25" value="100"></label>
+    <label>Cost per cash withdrawal <output id="o_cw"></output><input type="range" id="i_cw" min="100" max="200" step="5" value="100"></label>
+    <label>Card income (interchange) <output id="o_ic"></output><input type="range" id="i_ic" min="10" max="20" step="1" value="20"></label>
+    <label>Withdrawal fee on Basic <output id="o_fw"></output><input type="range" id="i_fw" min="100" max="250" step="25" value="150"></label>
+    <label>Plus price<select id="i_pp"><option value="">no Plus plan</option><option>2.99</option><option selected>3.99</option><option>4.99</option></select></label>
+    <label>Travel price<select id="i_pt"><option value="">no Travel plan</option><option>5.99</option><option selected>6.99</option><option>8.99</option></select></label>
+  </div>
+  <div class="out" aria-live="polite">
+    <div class="mono">Profit 2027 after fixed costs</div>
+    <div class="big" id="r_profit"></div>
+    <div class="small" id="r_delta"></div>
+    <div class="meter" aria-hidden="true"><i id="r_bar"></i></div>
+    <div class="scale"><span>−€400k</span><span>break-even</span><span>+€400k</span></div>
+    <dl class="kv" style="margin-top:18px"><dt>Contribution</dt><dd id="r_contrib"></dd><dt>Customers kept</dt><dd id="r_kept"></dd><dt>Plan subscribers</dt><dd id="r_subs"></dd><dt>Withdrawal fees ÷ withdrawal cost</dt><dd id="r_cover"></dd></dl>
+    <p style="margin:18px 0 0"><button class="btn" id="r_reset" type="button">Reset to the base case</button></p>
+  </div>
+</div>
+<p class="small" style="margin-top:14px">The same model as the workbook, running in the browser. Plan prices are limited to the surveyed ones because take-up is known only there. A different withdrawal fee is applied at unchanged churn and usage, which the case cannot confirm: combine it with the first slider.</p>
+<p class="src">Workbook · Sensitivity (the same engine)</p></article></section>
+<section><h2>One assumption at a time</h2><article class="card "><h3>Profit when one assumption moves</h3><div class="cw"><svg class="chart wide" viewBox="0 0 720 246" role="img" aria-label="sensitivity">
+<line x1="294.8" y1="0" x2="294.8" y2="216" class="axis dashed"/><text x="294.8" y="234" text-anchor="middle" class="lbl sm">break-even</text>
+<line x1="542.2" y1="0" x2="542.2" y2="216" class="axis"/><text x="542.2" y="234" text-anchor="middle" class="lbl sm">base €176k</text>
+<text x="308" y="24.0" text-anchor="end" class="lbl">Basic customers withdraw 50% less cash</text>
+<rect x="392.0" y="6" width="150.2" height="26" rx="3" class="bar neg"/>
+<text x="384.0" y="24.0" text-anchor="end" class="val">€69k</text>
+<text x="308" y="66.0" text-anchor="end" class="lbl">Plus subscribers withdraw 2× (no cap)</text>
+<rect x="348.1" y="48" width="194.1" height="26" rx="3" class="bar neg"/>
+<text x="340.1" y="66.0" text-anchor="end" class="val">€38k</text>
+<text x="308" y="108.0" text-anchor="end" class="lbl">Plan take-up ±20% vs survey</text>
+<rect x="487.2" y="90" width="54.9" height="26" rx="3" class="bar neg"/>
+<text x="479.2" y="108.0" text-anchor="end" class="val">€137k</text>
+<rect x="542.2" y="90" width="54.9" height="26" rx="3" class="bar"/>
+<text x="605.1" y="108.0" text-anchor="start" class="val">€215k</text>
+<text x="308" y="150.0" text-anchor="end" class="lbl">Per-use churn ×2 / ×0.5</text>
+<rect x="477.7" y="132" width="64.5" height="26" rx="3" class="bar neg"/>
+<text x="469.7" y="150.0" text-anchor="end" class="val">€130k</text>
+<rect x="542.2" y="132" width="59.7" height="26" rx="3" class="bar"/>
+<text x="609.9" y="150.0" text-anchor="start" class="val">€219k</text>
+<text x="308" y="192.0" text-anchor="end" class="lbl">Plus features cost €0.50 a subscriber</text>
+<rect x="485.6" y="174" width="56.6" height="26" rx="3" class="bar neg"/>
+<text x="477.6" y="192.0" text-anchor="end" class="val">€136k</text>
+</svg></div><p class="decision"><span class="mono">Decision</span>How customers react to the withdrawal fee matters most: each withdrawal a Basic customer avoids removes €0.50 of margin. Nothing here pushes the price list into a loss on its own.</p><p class="note">Combined downside (half the withdrawals on Basic, take-up −20%, features €0.25): €6k.</p><p class="src">Workbook · Sensitivity</p></article><article class="card "><h3>How far each assumption can move before the profit is gone</h3><div class="tablewrap"><table class=""><thead><tr><th>Assumption</th><th class=n>In the model</th><th class=n>Profit is zero at</th><th>What that means</th></tr></thead><tbody><tr><td>Withdrawals that Basic customers avoid once they cost €1.50</td><td class=n>0%</td><td class=n>82%</td><td>They would have to give up four of five withdrawals.</td></tr><tr><td>Plan take-up against the survey</td><td class=n>100%</td><td class=n>10%</td><td>Fees per use almost carry the company alone; the plans are the profit.</td></tr><tr><td>Per-use churn against the survey</td><td class=n>1×</td><td class=n>9.9×</td><td>Churn would have to be ten times what customers said.</td></tr><tr><td>Withdrawals of a Plus subscriber against the average</td><td class=n>1×</td><td class=n>2.27×</td><td>Above the cap (1.5× for employees) the €1.50 fee applies again.</td></tr><tr><td>Cost of Plus features per subscriber</td><td class=n>€0.00</td><td class=n>€2.18</td><td>More than half the Plus price; software will not cost that.</td></tr><tr class=hi><td>Cost per cash withdrawal</td><td class=n>€1.00</td><td class=n>€1.28</td><td>The tightest limit: +28%. The answer is to pass a cost increase into the fee.</td></tr><tr class=hi><td>Card income (interchange)</td><td class=n>0.20%</td><td class=n>0.12%</td><td>A legal cap, so the risk is regulatory. Same answer: the withdrawal fee.</td></tr></tbody></table></div><p class="decision"><span class="mono">Decision</span>The behavioural assumptions have wide margins. The two tight limits are both external and both about cash: the cost of a withdrawal and the card income that pays for the account.</p><p class="src">Workbook · Stress test · block A</p></article></section>
+<section><h2>All five behavioural assumptions at once</h2><article class="card "><h3>Profit of the recommended price list in 5,000 simulated years</h3><div class="cw"><svg class="chart wide" viewBox="0 0 720 300" role="img" aria-label="distribution of simulated profit">
+<rect x="16" y="26" width="264.6" height="230" class="shade"/>
+<text x="24" y="42" class="lbl sm">loss</text>
+<rect x="17.0" y="255.6" width="24.5" height="0.4" class="bar neg"/>
+<rect x="43.5" y="254.8" width="24.5" height="1.2" class="bar neg"/>
+<rect x="69.9" y="253.2" width="24.5" height="2.8" class="bar neg"/>
+<rect x="96.4" y="249.2" width="24.5" height="6.8" class="bar neg"/>
+<rect x="122.8" y="246.8" width="24.5" height="9.2" class="bar neg"/>
+<rect x="149.3" y="238.5" width="24.5" height="17.5" class="bar neg"/>
+<rect x="175.8" y="231.3" width="24.5" height="24.7" class="bar neg"/>
+<rect x="202.2" y="209.8" width="24.5" height="46.2" class="bar neg"/>
+<rect x="228.7" y="181.5" width="24.5" height="74.5" class="bar neg"/>
+<rect x="255.2" y="163.9" width="24.5" height="92.1" class="bar neg"/>
+<rect x="281.6" y="132.8" width="24.5" height="123.2" class="bar"/>
+<rect x="308.1" y="94.2" width="24.5" height="161.8" class="bar"/>
+<rect x="334.5" y="69.9" width="24.5" height="186.1" class="bar"/>
+<rect x="361.0" y="54.7" width="24.5" height="201.3" class="bar"/>
+<rect x="387.5" y="63.5" width="24.5" height="192.5" class="bar"/>
+<rect x="413.9" y="34.0" width="24.5" height="222.0" class="bar"/>
+<rect x="440.4" y="73.9" width="24.5" height="182.1" class="bar"/>
+<rect x="466.8" y="97.4" width="24.5" height="158.6" class="bar"/>
+<rect x="493.3" y="132.4" width="24.5" height="123.6" class="bar"/>
+<rect x="519.8" y="175.5" width="24.5" height="80.5" class="bar"/>
+<rect x="546.2" y="204.6" width="24.5" height="51.4" class="bar"/>
+<rect x="572.7" y="236.1" width="24.5" height="19.9" class="bar"/>
+<rect x="599.2" y="244.8" width="24.5" height="11.2" class="bar"/>
+<rect x="625.6" y="253.2" width="24.5" height="2.8" class="bar"/>
+<rect x="652.1" y="255.6" width="24.5" height="0.4" class="bar"/>
+<rect x="678.5" y="256.0" width="24.5" height="0.0" class="bar"/>
+<line x1="16" y1="256" x2="704" y2="256" class="axis"/>
+<text x="68.9" y="274" text-anchor="middle" class="lbl sm">−€100k</text>
+<text x="174.8" y="274" text-anchor="middle" class="lbl sm">−€50k</text>
+<text x="280.6" y="274" text-anchor="middle" class="lbl sm">€0</text>
+<text x="386.5" y="274" text-anchor="middle" class="lbl sm">€50k</text>
+<text x="492.3" y="274" text-anchor="middle" class="lbl sm">€100k</text>
+<text x="598.2" y="274" text-anchor="middle" class="lbl sm">€150k</text>
+<text x="704.0" y="274" text-anchor="middle" class="lbl sm">€200k</text>
+<line x1="280.6" y1="26" x2="280.6" y2="256" class="axis dashed"/>
+<line x1="392.6" y1="26" x2="392.6" y2="256" class="axis hi"/>
+<text x="386.6" y="36" text-anchor="end" class="val hi">median €53k</text>
+<line x1="653.6" y1="42" x2="653.6" y2="256" class="axis hi"/>
+<text x="647.6" y="52" text-anchor="end" class="val">base case €176k</text>
+<text x="360.0" y="294" text-anchor="middle" class="lbl sm">profit after fixed costs, 5,000 simulated years</text>
+</svg></div><p class="decision"><span class="mono">Decision</span>The median is €53k, about a third of the base case, and 14% of the simulated years end in a loss. The base case sits at the right edge because four of the five ranges can only move against it.</p><p class="note">Triangular distributions, drawn independently; seed fixed, so the workbook reproduces every draw with its own formulas.</p><p class="src">Workbook · Stress test · block C</p></article><article class="card "><h3>The same draws applied to the alternatives</h3><div class="cw"><svg class="chart wide" viewBox="0 0 720 234" role="img" aria-label="simulated profit range by price structure">
+<line x1="476.4" y1="0" x2="476.4" y2="208" class="axis dashed"/><text x="476.4" y="226" text-anchor="middle" class="lbl sm">break-even</text>
+<text x="712" y="226" text-anchor="end" class="lbl sm">chance of a loss</text>
+<text x="198" y="25.0" text-anchor="end" class="lbl">E · Recommended</text>
+<rect x="459.3" y="10" width="92.6" height="20" rx="3" class="bar"/>
+<rect x="507.0" y="6" width="4" height="28" rx="1" class="bar hi"/>
+<text x="509.0" y="48" text-anchor="middle" class="lbl sm">median €53k</text>
+<text x="712" y="25.0" text-anchor="end" class="val hi">14%</text>
+<text x="198" y="75.0" text-anchor="end" class="lbl">D · Basic + Travel only</text>
+<rect x="406.4" y="60" width="90.7" height="20" rx="3" class="bar neg"/>
+<rect x="452.1" y="56" width="4" height="28" rx="1" class="bar hi"/>
+<text x="454.1" y="98" text-anchor="middle" class="lbl sm">median −€36k</text>
+<text x="712" y="75.0" text-anchor="end" class="val">78%</text>
+<text x="198" y="125.0" text-anchor="end" class="lbl">B · Fees per use only</text>
+<rect x="330.0" y="110" width="138.6" height="20" rx="3" class="bar neg"/>
+<rect x="393.4" y="106" width="4" height="28" rx="1" class="bar hi"/>
+<text x="395.4" y="148" text-anchor="middle" class="lbl sm">median −€131k</text>
+<text x="712" y="125.0" text-anchor="end" class="val">97%</text>
+<text x="198" y="175.0" text-anchor="end" class="lbl">C · One fee €3.99 for all</text>
+<rect x="228.5" y="160" width="343.0" height="20" rx="3" class="bar neg"/>
+<rect x="421.2" y="156" width="4" height="28" rx="1" class="bar hi"/>
+<text x="423.2" y="198" text-anchor="middle" class="lbl sm">median −€86k</text>
+<text x="712" y="175.0" text-anchor="end" class="val">69%</text>
+</svg></div><p class="decision"><span class="mono">Decision</span>The recommendation earns more than one fee for everyone in 85% of the draws. One fee has the widest spread: it spreads €700,000 of fixed costs over 23,400 customers, so every change in churn hits hard.</p><p class="note">For one fee, the churn factor scales the monthly-fee churn (55 / 25 / 10%) and the usage factor scales everybody’s withdrawals, which are then included for all.</p><p class="src">Workbook · Stress test · block C</p></article><article class="card plain"><h3>The ranges are judgment, not case facts</h3><div class="tablewrap"><table class=""><thead><tr><th>Assumption varied</th><th class=n>Low</th><th class=n>Most likely</th><th class=n>High</th><th>Why this range</th></tr></thead><tbody><tr><td>Withdrawals that Basic customers avoid</td><td class=n>0%</td><td class=n>20%</td><td class=n>60%</td><td>Customers withdraw less often once a withdrawal has a fee (Magnac 2017). The case gives no figure, so the range is wide.</td></tr><tr><td>Plan take-up × survey</td><td class=n>0.6</td><td class=n>1.0</td><td class=n>1.2</td><td>Stated willingness to pay overstates real purchases, by 21% on average (Schmidt &amp; Bijmolt 2020); on the other side, the plans become more attractive once withdrawals cost €1.50.</td></tr><tr><td>Per-use churn × survey</td><td class=n>0.5</td><td class=n>1.0</td><td class=n>2.0</td><td>Half to double the stated intention to leave.</td></tr><tr><td>Withdrawals of a Plus subscriber × average</td><td class=n>1.0</td><td class=n>1.1</td><td class=n>1.5</td><td>The heaviest cash users are the likeliest buyers, up to the cap of three.</td></tr><tr><td>Cost of Plus features per subscriber a month</td><td class=n>€0.00</td><td class=n>€0.10</td><td class=n>€0.50</td><td>Software; a small cost per virtual card is possible.</td></tr></tbody></table></div><p class="note">The literature supports the direction of the first two ranges; their width is the author’s judgment. Full references under Method and sources.</p></article></section>
+<section><h2>If the wrong customers buy Plus</h2><article class="card "><h3>Adverse selection, with total withdrawals held constant</h3><p>The model lets a Plus subscriber withdraw as often as the average of the segment. More likely, the customers who buy a plan with included withdrawals are those who withdraw most. If every Plus subscriber among the employees uses the full three withdrawals (students: two), the customers left on Basic withdraw correspondingly less and pay fewer fees. Profit falls from €176k to <strong>€57k</strong>.</p><p class="decision"><span class="mono">Decision</span>This is the reason for “3 withdrawals included” instead of the survey’s “free withdrawals”. With a cap the loss is bounded and the price list still breaks even; without one it would not be.</p><p class="src">Workbook · Stress test · block B</p></article></section>
+<section><h2>Three what-ifs</h2><div class="grid3"><article class="card "><h3><span class="num">A cost rises</span>Each withdrawal costs €1.50 instead of €1.00</h3><p>With unchanged fees the profit turns into <strong>−€141k</strong>: the margin on 52,800 paid withdrawals a month is gone.</p><p>Raising the withdrawal fee to €2.00, the level Fluxa charges abroad and the top of the banks’ range, brings it back to <strong>€73k</strong> at unchanged usage and churn.</p><p class="decision"><span class="mono">Decision</span>Pass the cost into the fee that carries it, say that the cost rose by €0.50 and the fee with it, and leave the €0 account alone.</p></article><article class="card "><h3><span class="num">A rule changes</span>The EU halves the cap on card income to 0.1%</h3><p>Card income halves and the profit becomes <strong>−€50k</strong>. Raising Plus to €4.99 would not help: take-up halves.</p><p>The withdrawal fee at €2.00 restores <strong>€164k</strong>.</p><p class="decision"><span class="mono">Decision</span>Fees per use, not plan prices, absorb a regulatory shock.</p></article><article class="card "><h3><span class="num">A competitor moves</span>Fluxa drops its currency fee</h3><p>The traveller’s reference value falls from €8.00 to €4.00 and the economic value from €12.00 to €8.00. Travel at €6.99 still costs less than Fluxa plus separate insurance.</p><p>Matching with a cut to €5.99 costs €33,600 a year and pays only if more than <strong>23.3%</strong> of Travel subscribers would otherwise leave. Profit after such a cut: €149k.</p><p class="decision"><span class="mono">Decision</span>Hold the price and lead with the insurance; offer the annual plan to those who ask for less.</p></article></div><p class="small">If customers also avoid withdrawals, the fee keeps its effect: with 25% fewer withdrawals on Basic the profit is €123k at €1.50 and €283k at €2.00, before any further reaction to the higher fee.</p></section>
+
+  <nav class="pager" aria-label="Previous and next page"><a href="presentation.html">← How the prices are presented</a><a href="benchmark.html">Competitor benchmark →</a></nav>
+</main>
+<footer class="wrap foot">
+  <span>© 2026 Novčić Pay · student project, fictitious company. Price Management, ZSEM MBA 2026/27, case 05. <a href="../">Company website</a></span>
+  <span>Figures: case sheet (Case Book p. 7) and the pricing model. <a href="Novcic-Pay-pricing-calculations.xlsx">Calculation workbook (.xlsx)</a> · <a href="methodology.html#sources">Sources</a></span>
+</footer>
+<script>
+(function(){
+  var D = {"seg": [{"n": 24000, "card": 250, "fx": 25, "wd": 1, "churn": 0.05, "wtp": {"2.99": 0.15, "3.99": 0.08, "4.99": 0.04}, "kind": "plus"}, {"n": 12000, "card": 900, "fx": 50, "wd": 2, "churn": 0.03, "wtp": {"2.99": 0.5, "3.99": 0.4, "4.99": 0.2}, "kind": "plus"}, {"n": 4000, "card": 800, "fx": 400, "wd": 2, "churn": 0.7, "wtp": {"5.99": 0.8, "6.99": 0.7, "8.99": 0.3}, "kind": "travel"}], "fixed": 700000, "cost_acc": 0.6, "cost_fx": 0.003, "cost_ins": 0.5, "fee_fx": 0.015, "base": 176182.40000000002}, $ = function(id){return document.getElementById(id)};
+  function eur(v){var a=Math.round(Math.abs(v)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");return (v<0?"\u2212":"")+"\u20ac"+a}
+  function run(){
+    var wd=+$("i_wd").value/100, tu=+$("i_tu").value/100, ch=+$("i_ch").value/100, cw=+$("i_cw").value/100, ic=+$("i_ic").value/10000, fw=+$("i_fw").value/100, pp=$("i_pp").value, pt=$("i_pt").value;
+    var tot=0, kept=0, subs=0, wfee=0, wcost=0;
+    D.seg.forEach(function(s){
+      var p = s.kind=="travel" ? pt : pp, price = p===""?0:+p;
+      var share = p==="" ? 0 : Math.min(1, s.wtp[(+p).toFixed(2)]*tu);
+      var base = ic*s.card - D.cost_acc - D.cost_fx*s.fx;
+      var cplan = s.kind=="travel" ? base + price - cw*s.wd - D.cost_ins : base + price + D.fee_fx*s.fx - cw*s.wd;
+      var w = s.wd*(1-wd), cbasic = base + (fw-cw)*w + D.fee_fx*s.fx;
+      var nplan = s.n*share, nbasic = s.n*(1-share)*(1-Math.min(1, s.churn*ch));
+      tot += 12*(nplan*cplan + nbasic*cbasic); kept += nplan+nbasic; subs += nplan;
+      wfee += 12*nbasic*fw*w; wcost += 12*cw*(nbasic*w + nplan*s.wd);
+    });
+    var profit = tot - D.fixed;
+    $("o_wd").textContent = Math.round(wd*100)+"%"; $("o_tu").textContent = Math.round(tu*100)+"%"; $("o_ch").textContent = ch.toFixed(2)+"\u00d7";
+    $("o_cw").textContent = "\u20ac"+cw.toFixed(2); $("o_ic").textContent = (ic*100).toFixed(2)+"%"; $("o_fw").textContent = "\u20ac"+fw.toFixed(2);
+    $("r_profit").textContent = eur(profit); $("r_contrib").textContent = eur(tot);
+    $("r_kept").textContent = Math.round(kept).toLocaleString("en-US")+" ("+(kept/400).toFixed(1)+"%)"; $("r_subs").textContent = Math.round(subs).toLocaleString("en-US");
+    $("r_cover").textContent = wcost>0 ? Math.round(wfee/wcost*100)+"%" : "n/a";
+    var d = profit - D.base; $("r_delta").textContent = Math.abs(d)<1 ? "base case: the survey taken at face value" : (d>0?"+":"")+eur(d).replace("\u2212","\u2212")+" against the base case";
+    var x = Math.max(-1, Math.min(1, profit/400000)), bar=$("r_bar");
+    bar.className = profit<0?"neg":""; bar.style.left = (profit<0 ? 50+x*50 : 50)+"%"; bar.style.width = Math.abs(x)*50+"%";
+  }
+  ["i_wd","i_tu","i_ch","i_cw","i_ic","i_fw","i_pp","i_pt"].forEach(function(id){$(id).addEventListener("input", run)});
+  $("r_reset").addEventListener("click", function(){$("i_wd").value=0;$("i_tu").value=100;$("i_ch").value=100;$("i_cw").value=100;$("i_ic").value=20;$("i_fw").value=150;$("i_pp").value="3.99";$("i_pt").value="6.99";run()});
+  run();
+})();
+</script>
+</body>
+</html>

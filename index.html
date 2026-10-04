@@ -95,6 +95,23 @@
     .compare td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
     .compare tr.us td { font-weight: 700; color: var(--brand-dark); }
     .compare .note { font-size: 14px; color: var(--muted); margin: 12px 0 0; }
+    .calc { margin-top: 24px; background: var(--surface); border: 1px solid var(--hair); border-radius: 16px; padding: 24px 28px; }
+    .calc .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0 18px; }
+    .calc label { display: block; font-size: 15px; color: var(--muted); }
+    .calc input { display: block; width: 100%; min-height: 48px; margin-top: 6px; padding: 0 14px; font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--hair); border-radius: 10px; }
+    .calc input:focus { outline: 2px solid var(--brand); outline-offset: 1px; }
+    .calc .results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .calc .res { border: 1px solid var(--hair); border-radius: 12px; padding: 14px 16px; }
+    .calc .res.best { border: 2px solid var(--brand); }
+    .calc .res .name { font-size: 15px; color: var(--muted); }
+    .calc .res .amount { font-size: 26px; font-weight: 700; color: var(--brand-dark); font-variant-numeric: tabular-nums; }
+    .calc .verdict { margin: 16px 0 0; font-weight: 600; color: var(--brand-dark); }
+    .calc .note { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+    .analysis { margin-top: 24px; font-size: 15.5px; color: var(--muted); }
+    .analysis a { color: var(--brand); font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; }
+    .project { background: var(--brand-dark); color: #EAF1F6; font-size: 14.5px; }
+    .project .wrap { display: flex; justify-content: space-between; align-items: center; gap: 4px 16px; flex-wrap: wrap; min-height: 44px; }
+    .project a { color: #fff; font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; }
     /* faq */
     .faq details { background: var(--surface); border: 1px solid var(--hair); border-radius: 12px; padding: 4px 20px; margin-bottom: 12px; }
     .faq summary { cursor: pointer; font-weight: 600; min-height: 44px; display: flex; align-items: center; }
@@ -120,10 +137,18 @@
       .compare { padding: 16px; overflow-x: auto; }
       .compare table { min-width: 520px; }
       .btn { min-height: 48px; }
+      .calc { padding: 18px 16px; }
+      .calc .fields, .calc .results { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+  <div class="project">
+    <div class="wrap">
+      <span>Student project for Price Management, ZSEM. The company is fictitious.</span>
+      <a href="dashboard/">Pricing analysis behind this price list →</a>
+    </div>
+  </div>
   <header>
     <div class="wrap nav">
       <a class="logo" href="#top">Novčić<span>Pay</span></a>
@@ -253,6 +278,27 @@
             </tbody>
           </table>
         </div>
+
+        <div class="calc" aria-label="Price calculator">
+          <h3>What would your month cost?</h3>
+          <div class="fields">
+            <label>Cash withdrawals a month
+              <input id="calc-wd" type="number" inputmode="numeric" min="0" step="1" value="2">
+            </label>
+            <label>Card payments in other currencies a month, in euros
+              <input id="calc-fx" type="number" inputmode="decimal" min="0" step="10" value="50">
+            </label>
+          </div>
+          <div class="results" aria-live="polite">
+            <div class="res" id="res-basic"><div class="name">Basic</div><div class="amount" id="out-basic">€3.75</div></div>
+            <div class="res" id="res-plus"><div class="name">Plus</div><div class="amount" id="out-plus">€4.74</div></div>
+            <div class="res" id="res-travel"><div class="name">Travel</div><div class="amount" id="out-travel">€6.99</div></div>
+          </div>
+          <p class="verdict" id="calc-verdict">Your monthly price is lowest on Basic.</p>
+          <p class="note">Your monthly price = monthly plan price + €1.50 for each cash withdrawal that is not included + 1.5% above the ECB rate on payments in other currencies (0% in Travel). Plus also adds shared accounts and virtual cards; Travel also adds travel insurance.</p>
+        </div>
+
+        <p class="analysis">How these prices were set: <a href="dashboard/">read the pricing analysis →</a></p>
       </div>
     </section>
 
@@ -296,5 +342,33 @@
       <a href="dashboard/">Pricing analysis</a>
     </div>
   </footer>
+  <script>
+    (function () {
+      var wd = document.getElementById("calc-wd"), fx = document.getElementById("calc-fx");
+      var out = { basic: document.getElementById("out-basic"), plus: document.getElementById("out-plus"), travel: document.getElementById("out-travel") };
+      var box = { basic: document.getElementById("res-basic"), plus: document.getElementById("res-plus"), travel: document.getElementById("res-travel") };
+      var verdict = document.getElementById("calc-verdict");
+      var names = { basic: "Basic", plus: "Plus", travel: "Travel" };
+      function euro(v) { return "€" + v.toFixed(2); }
+      function update() {
+        var w = wd.value.trim() === "" ? NaN : Number(wd.value), f = fx.value.trim() === "" ? NaN : Number(fx.value);
+        var k;
+        for (k in box) { box[k].className = "res"; }
+        if (!isFinite(w) || !isFinite(f) || w < 0 || f < 0) {
+          for (k in out) { out[k].textContent = "–"; }
+          verdict.textContent = "Please enter a number";
+          return;
+        }
+        w = Math.floor(w);
+        var cost = { basic: 1.5 * w + 0.015 * f, plus: 3.99 + 1.5 * Math.max(0, w - 3) + 0.015 * f, travel: 6.99 };
+        var best = "basic";
+        for (k in cost) { out[k].textContent = euro(cost[k]); if (cost[k] < cost[best] - 0.004) { best = k; } }
+        box[best].className = "res best";
+        verdict.textContent = "Your monthly price is lowest on " + names[best] + ".";
+      }
+      wd.addEventListener("input", update); fx.addEventListener("input", update);
+      update();
+    })();
+  </script>
 </body>
 </html>

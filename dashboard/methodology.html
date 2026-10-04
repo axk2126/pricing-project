@@ -3,48 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mission to dashboard, one chain. — Novčić Pay pricing</title>
-<meta name="description" content="Novčić Pay pricing strategy 2027 — Mission to dashboard, one chain.">
+<title>Method and sources · Novčić Pay pricing strategy 2027</title>
+<meta name="description" content="Novčić Pay pricing strategy 2027: How the model works, every assumption, the workbook and the sources.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=8e85ceaf">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <div class="wrap bar">
-    <a class="brand" href="index.html">Novčić Pay <span>· pricing strategy 2027</span></a>
-    <nav class="menu" aria-label="Dashboard pages"><a href="index.html">Executive</a><a href="methodology.html" class=cur>Methodology</a><a href="customers.html">Customers</a><a href="kpis.html">KPIs</a><a href="pricing.html">Pricing</a><a href="scenarios.html">Scenarios</a><a href="benchmark.html">Benchmark</a><a href="recommendation.html">Recommendation</a></nav>
+    <a class="brand" href="index.html">Novčić Pay <span>pricing strategy 2027</span></a>
+    <nav class="menu" aria-label="Dashboard pages"><a href="index.html">Overview</a><a href="customers.html">1 Customers</a><a href="pricing.html">2 Pricing</a><a href="numbers.html">3 Numbers</a><a href="presentation.html">4 Presentation</a><a href="risk.html">Risk</a><a href="benchmark.html">Benchmark</a><a href="kpis.html">KPIs</a><a href="methodology.html" class=cur aria-current=page>Method</a></nav>
   </div>
 </header>
-<main class="wrap">
+<main class="wrap" id="main">
   <section class="hero">
-    <div class="eyebrow">Methodology · how the numbers were made</div>
-    <h1>Mission to dashboard, one chain.</h1>
-    <p class="lead">Every KPI follows from an objective, every price point from a KPI, every number from the case sheet. Two independent calculations agree to the cent.</p>
+    <div class="eyebrow">Evidence · Method and sources</div>
+    <h1>How the numbers were made.</h1>
+    <p class="lead">The order of work, the model, the formulas, every assumption with its tested range, the limits of the case, the workbook that produces every figure, and the sources.</p>
   </section>
   
-<section><h2>The logic of the project</h2><div class="chain"><span class="on">Mission / Vision</span><i>→</i><span class="on">Strategic objectives</span><i>→</i><span class="on">KPIs</span><i>→</i><span class="on">Pricing strategy</span><i>→</i><span class="on">Financial impact</span><i>→</i><span class="">Dashboard</span</div>
-<div class="grid2">
-<article class="card plain"><h3>From mission to dashboard</h3><p>The chain follows the Balanced Scorecard logic taught in Quantitative Methods for Managers (Pirić): <em>Mission → Values → Vision → Strategy → Objectives → KPIs → Targets → Initiatives</em>. Pricing is the main initiative: each price point is chosen to move a KPI that follows from an objective, not the other way round.</p><p>The pricing itself follows the strategic pricing pyramid of Price Management (Nagle &amp; Müller 2018): value creation → price structure → value communication → pricing policy → price level → competition.</p></article>
-<article class="card plain"><h3>Data</h3><div class="tablewrap"><table class=""><thead><tr><th>Source</th><th>What it gives</th><th>Status</th></tr></thead><tbody><tr><td>Case sheet, Case Book p. 7</td><td>segments, usage, survey of 2,000 customers, costs, competitors, EU rules</td><td>source of truth</td></tr><tr><td>Handouts 03, 04, 05, 07</td><td>economic value, structure and fences, communication, price level and breakeven</td><td>concepts and formulas</td></tr><tr><td>Public price lists (Revolut, Wise, Trade Republic, PBZ)</td><td>benchmark for the price level</td><td>accessed 02.10.2026, kept separate from case facts</td></tr><tr><td>EU law (EUR-Lex)</td><td>interchange cap, fee information document, ECB mark-up, 'free'</td><td>verified by article</td></tr></tbody></table></div></article>
+<section><h2>From the case sheet to the price list</h2><div class="grid2"><article class="card "><h3>The order of work</h3><ol class='steps'><li><strong>Segments and value.</strong> What each segment costs and earns today; the economic value of each plan against its next-best alternative.</li><li><strong>Structure.</strong> Price metric, offers and fences, tested for self-selection.</li><li><strong>Price level.</strong> Floor and ceiling per offer; contribution at every surveyed price; breakeven sales change of each neighbouring price.</li><li><strong>Alternatives.</strong> The same customers under four other structures.</li><li><strong>Risk.</strong> One-way sensitivity, switching values, a simulation, three what-ifs.</li><li><strong>Presentation.</strong> Value message and the EU rules of the case.</li></ol><p class="note">The order follows the strategic pricing pyramid of Nagle &amp; Müller (2018): value creation, price structure, value communication, pricing policy, price level.</p></article><article class="card "><h3>How the model follows a customer</h3><ol class='steps'><li>At the plan price, the survey share of the segment buys the plan. No interpolation between surveyed prices.</li><li>Everyone else stays on Basic and pays per use, except the survey share who leave because of fees per use.</li><li>Contribution = income (0.2% of card payments, plan fee, fees per use) − variable cost (€0.60 account, €1.00 per withdrawal, 0.3% of currency payments, €0.50 insurance).</li><li>× 12 months, minus €700,000 of fixed costs.</li><li>Segments do not interact, so the best price is found one segment at a time.</li></ol><p class="src">Workbook · Segment economics · Model</p></article></div></section>
+<section><h2>Formulas used</h2><div class="tablewrap"><table class=""><thead><tr><th>Formula</th><th>Source</th><th>Used for</th><th>Result</th></tr></thead><tbody><tr><td>Economic value = reference value + positive − negative differentiation value</td><td>N&amp;M Ch. 2</td><td>ceiling of the Travel plan</td><td>€8.00 + €4.00 = €12.00</td></tr><tr><td>Share captured = (price − reference) ÷ (economic value − reference)</td><td>N&amp;M Ch. 2</td><td>position of each price in its range</td><td>Plus 50%; Travel below the floor</td></tr><tr><td>Contribution = Σ (price − variable cost) × quantity; gain = contribution ÷ contribution of the alternative − 1</td><td>N&amp;M Ch. 4</td><td>comparison of structures</td><td>+13.7% against one fee; +28.7% against fees per use</td></tr><tr><td>Breakeven sales change = −ΔP ÷ (CM + ΔP)</td><td>N&amp;M Ch. 9</td><td>test of each neighbouring price</td><td>all four moves fail</td></tr><tr><td>Incremental CM = plan margin − share who stay × Basic margin</td><td>own extension of the above</td><td>the margin really at stake when a subscriber is lost</td><td>Plus €1.07; Travel €2.25</td></tr><tr><td>Break-even volume = fixed costs ÷ contribution per unit</td><td>N&amp;M Ch. 9</td><td>customers needed</td><td>30,231 at €1.93 a month</td></tr><tr><td>Switching value: input value at which profit = 0</td><td>standard sensitivity analysis</td><td>how far each assumption can move</td><td>withdrawals −82%; withdrawal cost €1.28</td></tr><tr><td>Monte Carlo simulation, 5,000 draws, triangular distributions</td><td>standard risk analysis</td><td>all behavioural assumptions at once</td><td>median €53k; loss in 14% of draws</td></tr></tbody></table></div><p class="small">N&amp;M = Nagle &amp; Müller (2018). The course handouts for lectures 3, 4, 5 and 7 present the same formulas.</p></section>
+<section id="workbook"><h2>The calculation workbook</h2><div class="grid2">
+<article class="card accent"><h3>One file, every number</h3><p>All figures on these pages and on the company website are produced in one Excel workbook with live formulas. Only the Inputs sheet is typed: case facts, assumptions and the price list. Change a price there and every sheet follows.</p><p><a class='btn solid' href='Novcic-Pay-pricing-calculations.xlsx'>Download the workbook (.xlsx)</a></p><p class="note">17 sheets: KPIs · Inputs · Segment economics · Model · Bridge · Alternatives · Price grid · Break-even · EVE · Arbitrage · Sensitivity · Stress test · Assumptions · Dashboard map · Sources · Check.</p></article>
+<article class="card "><h3>Checked twice</h3><p>The model was built a second time in Python, independently of the workbook. 43 results are compared on the Check sheet, from the totals down to the percentiles of the simulation: the largest difference is <strong>€0.00</strong>. These pages are generated from the Python model, so a number here is the same number as in the workbook.</p><p class="note">The simulation’s random draws are stored in the workbook as values; the workbook recomputes the profit of each draw with its own formulas.</p><p class="src">Workbook · Check</p></article>
 </div></section>
-<section><h2>How the model works</h2>
+<section id="assumptions"><h2>Assumptions that are not on the case sheet</h2><div class="tablewrap"><table class=""><thead><tr><th>Assumption</th><th>Why</th><th>Tested</th><th class=n>Effect on profit</th></tr></thead><tbody><tr><td>Fees-per-use churn applies only to customers who pay those fees; plan buyers do not leave</td><td>wording of the case: “… who pay these fees would leave”</td><td>churn × 0.5 to × 2</td><td class=n>€219k to €130k</td></tr><tr><td>Customers withdraw cash as often at €1.50 as they did for nothing</td><td>the case gives usage before fees only; the least defensible assumption</td><td>25% to 75% fewer withdrawals on Basic</td><td class=n>€123k to €16k</td></tr><tr><td>A Plus subscriber withdraws as often as the segment average</td><td>protected by the cap of three</td><td>1.5× and 2×; adverse selection</td><td class=n>€107k and €38k; €57k</td></tr><tr><td>Shared accounts and virtual cards cost nothing extra</td><td>software features; no cost in the case</td><td>€0.25 and €0.50 per subscriber</td><td class=n>€156k and €136k</td></tr><tr><td>Take-up equals the survey share at the chosen price</td><td>survey of 2,000 customers</td><td>± 20%</td><td class=n>€137k to €215k</td></tr><tr><td>The cap of three withdrawals does not lower Plus take-up</td><td>the survey asked about “free cash withdrawals”; typical use is 1–2</td><td>covered by the take-up range</td><td class=n></td></tr><tr><td>Travel includes the Plus features</td><td>each offer contains the one below</td><td>no extra cost by the assumption above</td><td class=n></td></tr><tr><td>Card income is earned on all card payments, also in other currencies</td><td>wording of the case: “of all card payments”</td><td>cap halved to 0.1%</td><td class=n>−€50k</td></tr></tbody></table></div><p class="small">Fact, assumption and decision are kept apart in the workbook: blue, orange and green cells on the Inputs sheet.</p></section>
+<section><h2>Limits of the analysis</h2><article class="card plain"><h3>What the case cannot tell us</h3><ul><li><strong>The churn for “a monthly fee” has no fee level.</strong> The one-fee alternative is therefore credible only up to about €4.</li><li><strong>No behaviour after fees.</strong> How often customers withdraw cash once it costs €1.50 is unknown. It is the widest range in the simulation and the first number to measure.</li><li><strong>Three price points per plan.</strong> Prices between them, such as Travel at €7.99, cannot be evaluated, only bounded: it needs 48.5% take-up.</li><li><strong>Segment averages.</strong> A “typical month” hides light and heavy users within a segment; the adverse-selection test addresses the most costly case.</li><li><strong>One year.</strong> The case gives no lifetimes, so the value of a student who becomes an employee is argued, not calculated.</li><li><strong>The simulation’s ranges are judgment.</strong> They show how the structures compare under the same doubts, not the true probability of a loss.</li></ul></article></section>
+<section id="sources"><h2>Sources</h2>
 <div class="grid2">
-<article class="card "><h3>Each segment is followed through its choices</h3><ol class='steps'><li>At the chosen plan price, the survey share buys the plan (no interpolation between surveyed points).</li><li>Everyone else stays on Basic and pays per use, except the survey share who leave because of per-use fees. That churn applies to those who actually pay the fees.</li><li>Contribution = income (interchange 0.2%, plan fees, per-use fees) − variable cost (€0.60 account, €1.00 per withdrawal, 0.3% of currency payments, €0.50 insurance).</li><li>Totals × 12 months, minus €700,000 fixed costs.</li><li>Segments are independent, so the best price is chosen one segment at a time, then the structure is compared with the alternatives.</li></ol></article>
-<article class="card "><h3>Formulas from the course</h3><div class="tablewrap"><table class=""><thead><tr><th>Formula</th><th>Used for</th></tr></thead><tbody><tr><td>EVC = reference value + positive − negative differentiation value (H03)</td><td>ceiling of the Travel plan: €12.00</td></tr><tr><td>Share captured = (P − ref) / (EVC − ref) (H03)</td><td>Plus at €3.99 captures 50% of the differentiation value</td></tr><tr><td>Contribution = Σ (P − VC) × Q; gain = C / C_one price − 1 (H04)</td><td>structure comparison: +13.7% vs one fee, +28.7% vs per use only</td></tr><tr><td>Breakeven sales change = −ΔP / (CM + ΔP) (H07)</td><td>every alternative price point fails the test</td></tr><tr><td>Break-even volume = FC / (P − VC) (H07)</td><td>30,231 customers at the blended €1.93 a month</td></tr><tr><td>Reactive breakeven = ΔP / CM (H08)</td><td>matching a Fluxa cut pays only above 23.3% subscribers at risk</td></tr></tbody></table></div></article>
-</div></section>
-<section><h2>Verification</h2>
-<div class="grid2">
-<article class="card accent"><h3>Two independent calculations</h3><p>The workbook (live formulas, 11 sheets) and a Python script compute the same model from the same inputs. The workbook was recalculated headlessly and 25 totals were compared with the script: <strong>maximum difference €0.00</strong>. The dashboard is generated from the script, so every figure here is the same figure as in the workbook.</p></article>
-<article class="card "><h3>Assumptions not on the case sheet</h3><div class="tablewrap"><table class=""><thead><tr><th>Assumption</th><th>Tested range</th><th>Effect on profit</th></tr></thead><tbody><tr><td>Nobody withdraws less cash once a withdrawal costs €1.50</td><td>25–75% fewer withdrawals</td><td>€176k → €16k at 75%</td></tr><tr><td>Shared accounts and virtual cards cost nothing extra</td><td>€0.25–0.50 per subscriber</td><td>→ €136k at €0.50</td></tr><tr><td>Plus subscribers withdraw as often as the segment average (cap of 3)</td><td>1.5×–2×</td><td>→ €38k at 2×</td></tr><tr><td>Per-use churn applies to non-buyers only</td><td>×0.5–×2</td><td>€219k / €130k</td></tr><tr><td>Differentiation value of Travel against Fluxa = 0</td><td>conservative</td><td>no effect on the numbers; lowers the stated ceiling</td></tr></tbody></table></div></article>
-</div></section>
-<section><h2>Limitations to say out loud</h2><article class="card plain"><h3>What the case cannot tell us</h3><ul><li>The churn for ‘a monthly fee’ was asked without a fee level, so the flat-fee alternative is only credible up to about €4.</li><li>No data on how withdrawal behaviour responds to a fee; this is the biggest sensitivity and the first KPI to watch.</li><li>No lifetime value: the case gives no ageing of students into employees, although that pipeline is the economic reason to keep students at €0.</li><li>Take-up is known at three price points per segment only; €7.99 for Travel is not modelled (linear interpolation would give ≈ 50% and €176k, marginally above €6.99).</li></ul></article></section>
+<div>
+<h3>Literature</h3>
+<ol class="refs">
+<li><b>Nagle, T. T., &amp; Müller, G. (2018).</b> <i>The Strategy and Tactics of Pricing: A Guide to Growing More Profitably</i> (6th ed.). Routledge. Ch. 2 Economic value · Ch. 3 Price and value communication · Ch. 4 Price structure · Ch. 6 Price level · Ch. 9 Financial analysis.</li>
+<li><b>Kaplan, R. S., &amp; Norton, D. P. (1992).</b> The balanced scorecard: Measures that drive performance. <i>Harvard Business Review, 70</i>(1), 71–79.</li>
+<li><b>Schmidt, J., &amp; Bijmolt, T. H. A. (2020).</b> Accurately measuring willingness to pay for consumer goods: A meta-analysis of the hypothetical bias. <i>Journal of the Academy of Marketing Science, 48</i>(3), 499–518. Stated willingness to pay exceeds real willingness to pay by 21% on average.</li>
+<li><b>Magnac, T. (2017).</b> ATM foreign fees and cash withdrawals. <i>Journal of Banking &amp; Finance, 78</i>, 117–129. Customers withdraw less often once a withdrawal fee is introduced.</li>
+<li><b>Price Management, ZSEM (2026/27).</b> Lecture handouts 3 (value creation), 4 (price structure), 5 (value and price communication), 7 (price level); Case Book, case 05.</li>
+</ol>
+</div>
+<div>
+<h3>EU rules named in the case</h3>
+<ol class="refs">
+<li><b>Regulation (EU) 2015/751</b> on interchange fees for card-based payment transactions, Art. 3: debit card interchange capped at 0.2%.</li>
+<li><b>Directive 2014/92/EU</b> (Payment Accounts Directive), Art. 4 fee information document, Art. 5 statement of fees.</li>
+<li><b>Regulation (EU) 2021/1230</b> on cross-border payments, Art. 4: currency conversion charges for card-based transactions as a percentage mark-up over the latest ECB reference rate.</li>
+<li><b>Directive 2005/29/EC</b> (Unfair Commercial Practices), Annex I, No 20: “free”.</li>
+<li><b>Directive 2006/112/EC</b> (VAT), Art. 135(1)(d): exemption for transactions concerning accounts and payments.</li>
+<li><b>Directive (EU) 2015/2366</b> (PSD2), Art. 62(4): no surcharges on consumer cards with regulated interchange.</li>
+</ol>
+<h3 style="margin-top:22px">Price lists (accessed 5 October 2026)</h3>
+<ol class="refs">
+<li>Revolut Croatia: plans (revolut.com/en-HR/our-pricing-plans) and fee pages for Standard, Plus and Premium (revolut.com/en-HR/legal).</li>
+<li>Wise: card fees and pricing (wise.com/hr/pricing).</li>
+<li>Trade Republic: fee information document for the payment account (assets.traderepublic.com).</li>
+<li>PBZ: PBZ mladi (pbz.hr/studenti/pbz-mladi.html).</li>
+</ol>
+</div>
+</div>
+<p class="small">All EU acts at eur-lex.europa.eu. Case figures (segments, survey, costs, Fluxa, banks) are from the Case Book and are fictitious.</p>
+</section>
+<section><h2>How this was made</h2><article class="card plain"><h3>Tools</h3><p>The pricing model is an Excel workbook, recomputed independently in Python. The company website and these pages were built with an AI coding assistant (Claude Code), as the course prescribes; the assistant was also used to check calculations and edit text. The strategy, the assumptions and every price decision are the author’s, and each number can be traced in the workbook.</p></article></section>
 
-  <nav class="pager"><a href="index.html">← Executive dashboard</a><a href="customers.html">Customer insights →</a></nav>
+  <nav class="pager" aria-label="Previous and next page"><a href="kpis.html">← KPIs and roll-out</a><a href="../">Company website →</a></nav>
 </main>
 <footer class="wrap foot">
-  <span>© 2026 Novčić Pay — student project, fictitious company. Price Management, ZSEM MBA 2026/27, case 05.</span>
-  <span>All figures from the case sheet (Case Book p. 7) and the pricing model; benchmark figures from public price lists, accessed 02.10.2026.</span>
+  <span>© 2026 Novčić Pay · student project, fictitious company. Price Management, ZSEM MBA 2026/27, case 05. <a href="../">Company website</a></span>
+  <span>Figures: case sheet (Case Book p. 7) and the pricing model. <a href="Novcic-Pay-pricing-calculations.xlsx">Calculation workbook (.xlsx)</a> · <a href="methodology.html#sources">Sources</a></span>
 </footer>
+
 </body>
 </html>
