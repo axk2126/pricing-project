@@ -5,277 +5,397 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Novčić Pay — the account for 18–26</title>
   <meta name="description" content="Novčić Pay: a euro account and debit card for people aged 18 to 26. No monthly fee. Pay only for what you use.">
-  <meta name="theme-color" content="#0D2F49">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230D2F49'/%3E%3Cpath d='M9 23V9l14 14V9' fill='none' stroke='%23C6DEED' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#061520">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23C6DEED'/%3E%3Cpath d='M11 22V10l10 12V10' fill='none' stroke='%23061520' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <style>
+    @font-face { font-family: "Archivo"; font-weight: 400; font-display: swap; src: url(data:font/woff2;base64,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) format("woff2"); }
+    @font-face { font-family: "Archivo"; font-weight: 600; font-display: swap; src: url(data:font/woff2;base64,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) format("woff2"); }
+    @font-face { font-family: "Archivo Display"; font-weight: 600; font-display: swap; src: url(data:font/woff2;base64,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) format("woff2"); }
     :root {
-      --brand: #114E78;
-      --brand-dark: #0D2F49;
-      --deep: #071C2B;
-      --ink: #0D2F49;
-      --muted: #55697C;
-      --paper: #F8FAFB;
-      --surface: #FFFFFF;
-      --hair: rgba(13, 47, 73, .13);
-      --soft: #DDEBF7;
-      --sky: #C6DEED;
-      --on-dark: #EAF1F6;
-      --on-dark-muted: rgba(234, 241, 246, .74);
+      --deep: #061520; --navy: #0D2F49; --brand: #114E78; --mid: #4A87B1; --sky: #C6DEED; --ice: #E6F0F7;
+      --paper: #F3F6F8; --white: #FFFFFF; --ink: #0A2233; --muted: #536779; --hair: rgba(10, 34, 51, .12);
+      --on-dark: #EAF1F6; --on-dark-muted: rgba(234, 241, 246, .72); --hair-dark: rgba(234, 241, 246, .16);
+      --sans: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --display: "Archivo Display", "Archivo", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+      --r-xl: 36px; --r-lg: 26px; --r-md: 16px;
+      --ease: cubic-bezier(.2, .7, .1, 1);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-size: 17px;
-      line-height: 1.6;
-      color: var(--ink);
-      background: var(--paper);
-    }
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    body { margin: 0; font-family: var(--sans); font-size: 18px; line-height: 1.55; color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
     .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
-    .ico { width: 24px; height: 24px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-    a:focus-visible, .btn:focus-visible, summary:focus-visible, input:focus-visible { outline: 3px solid var(--sky); outline-offset: 2px; border-radius: 6px; }
+    .ico { width: 24px; height: 24px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    a { color: inherit; }
+    a:focus-visible, .btn:focus-visible, summary:focus-visible, input:focus-visible { outline: 3px solid var(--mid); outline-offset: 3px; border-radius: 8px; }
+    h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 600; letter-spacing: -.035em; line-height: 1; }
+    h1 { font-size: clamp(34px, 7.4vw, 104px); letter-spacing: -.045em; line-height: .94; }
+    h2 { font-size: clamp(36px, 5.2vw, 72px); line-height: .98; }
+    h3 { font-size: 24px; letter-spacing: -.025em; line-height: 1.12; }
+    p { margin: 0 0 1em; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--brand); margin-bottom: 22px; }
+    .eyebrow::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: currentColor; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 30px; font: 600 18px/1 var(--sans); text-decoration: none; border-radius: 999px; border: 2px solid transparent; cursor: pointer; transition: transform .25s var(--ease), background .2s, color .2s, border-color .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn .ico { width: 20px; height: 20px; transition: transform .25s var(--ease); }
+    .btn:hover .ico { transform: translateX(4px); }
+    .btn.primary { background: var(--sky); color: var(--deep); }
+    .btn.primary:hover { background: var(--white); }
+    .btn.dark { background: var(--deep); color: var(--white); }
+    .btn.dark:hover { background: var(--brand); }
+    .btn.line { border-color: var(--hair); color: var(--ink); background: transparent; }
+    .btn.line:hover { border-color: var(--ink); }
+    .btn.line-dark { border-color: var(--hair-dark); color: var(--on-dark); background: transparent; }
+    .btn.line-dark:hover { border-color: var(--on-dark); }
+    section { padding: 120px 0; position: relative; }
 
     /* project strip */
-    .project { background: var(--deep); color: var(--on-dark-muted); font-size: 14.5px; }
-    .project .wrap { display: flex; justify-content: space-between; align-items: center; gap: 4px 16px; flex-wrap: wrap; min-height: 44px; }
-    .project a { color: #fff; font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; }
+    .project { background: #030C13; color: var(--on-dark-muted); font-size: 14.5px; }
+    .project .wrap { display: flex; justify-content: space-between; align-items: center; gap: 2px 16px; flex-wrap: wrap; min-height: 44px; }
+    .project a { color: var(--white); font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; }
 
     /* header */
-    header { position: sticky; top: 0; z-index: 10; background: rgba(13, 47, 73, .96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(234, 241, 246, .12); }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; min-height: 68px; flex-wrap: wrap; }
-    .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 21px; letter-spacing: -.02em; color: #fff; text-decoration: none; min-height: 44px; }
-    .logo .mark { width: 32px; height: 32px; border-radius: 9px; background: var(--sky); display: inline-flex; align-items: center; justify-content: center; }
-    .logo .mark svg { width: 18px; height: 18px; fill: none; stroke: var(--brand-dark); stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
-    .logo .word { color: #fff; }
-    .logo .word b { color: var(--sky); font-weight: 700; }
+    header { position: sticky; top: 0; z-index: 30; background: rgba(6, 21, 32, .86); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); border-bottom: 1px solid var(--hair-dark); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 6px 18px; min-height: 72px; flex-wrap: wrap; }
+    .logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; min-height: 44px; color: var(--white); font: 600 22px/1 var(--display); letter-spacing: -.03em; }
+    .logo .coin { width: 34px; height: 34px; border-radius: 50%; background: var(--sky); display: inline-flex; align-items: center; justify-content: center; box-shadow: inset 0 0 0 3px rgba(6, 21, 32, .14); }
+    .logo .coin svg { width: 18px; height: 18px; fill: none; stroke: var(--deep); stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+    .logo b { color: var(--sky); font-weight: 600; }
     nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2px; flex-wrap: wrap; align-items: center; }
-    nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; color: var(--on-dark); text-decoration: none; font-weight: 500; font-size: 16px; border-radius: 8px; }
-    nav a:hover { background: rgba(234, 241, 246, .1); }
-
-    h1, h2, h3 { color: var(--brand-dark); letter-spacing: -.025em; line-height: 1.12; margin: 0 0 .5em; }
-    h1 { font-size: clamp(38px, 5.6vw, 64px); letter-spacing: -.035em; line-height: 1.04; }
-    h2 { font-size: clamp(28px, 3.6vw, 40px); }
-    h3 { font-size: 20px; letter-spacing: -.01em; }
-    p { margin: 0 0 1em; }
-    .kicker { display: block; font-size: 14px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--brand); margin-bottom: 12px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 0 26px;
-      background: var(--brand); color: #fff; font-weight: 600; font-size: 17px; text-decoration: none; border-radius: 12px;
-      border: 2px solid var(--brand);
-    }
-    .btn:hover { background: var(--brand-dark); border-color: var(--brand-dark); }
-    .btn.ghost { background: transparent; color: var(--brand); }
-    .btn.ghost:hover { background: var(--soft); }
-    .btn.light { background: var(--sky); border-color: var(--sky); color: var(--brand-dark); }
-    .btn.light:hover { background: #fff; border-color: #fff; }
-    .btn .ico { width: 20px; height: 20px; }
-    section { padding: 96px 0; }
-    .intro { max-width: 660px; color: var(--muted); font-size: 19px; margin-bottom: 44px; }
+    nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 15px; color: var(--on-dark); text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 999px; transition: background .2s; }
+    nav a:hover { background: rgba(234, 241, 246, .12); }
+    nav li.cta a { background: var(--sky); color: var(--deep); margin-left: 8px; padding: 0 20px; }
+    nav li.cta a:hover { background: var(--white); }
 
     /* hero */
-    .hero { background: var(--brand-dark); color: var(--on-dark); padding: 84px 0 0; overflow: hidden; }
-    .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
-    .hero h1 { color: #fff; }
-    .hero .lead { font-size: 21px; color: var(--on-dark-muted); max-width: 520px; margin-bottom: 30px; }
-    .hero .cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 34px; }
-    .hero .cta a.text { color: var(--on-dark); font-weight: 600; display: inline-flex; align-items: center; min-height: 48px; padding: 0 6px; }
-    .facts { list-style: none; margin: 0 0 72px; padding: 0; display: grid; gap: 10px; max-width: 430px; }
-    .facts li { display: flex; gap: 12px; align-items: center; color: var(--on-dark); font-size: 17px; }
-    .facts .ico { color: var(--sky); width: 22px; height: 22px; }
-    .facts strong { color: #fff; }
+    .hero { background: var(--deep); color: var(--on-dark); padding: 72px 0 0; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(900px 620px at 78% 42%, rgba(17, 78, 120, .55), transparent 68%); pointer-events: none; }
+    .rings { position: absolute; right: -260px; top: -120px; width: 1100px; height: 1100px; color: var(--sky); opacity: .16; pointer-events: none; }
+    .rings .spin { transform-origin: 550px 550px; animation: spin 90s linear infinite; }
+    .hero .wrap { position: relative; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 40px; align-items: start; }
+    .hero h1 { color: var(--white); position: relative; z-index: 4; }
+    .hero h1 .l1 { display: block; font-size: clamp(34px, 9.300vw, 119px); white-space: nowrap; }
+    .hero h1 em { display: block; font-style: normal; color: var(--sky); font-size: clamp(23px, 4.600vw, 59px); letter-spacing: -.035em; line-height: 1.05; margin-top: .22em; }
+    .hero .lead { font-size: 21px; color: var(--on-dark-muted); max-width: 500px; margin: 44px 0 34px; }
+    .hero .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+    .hero-facts { list-style: none; margin: 0 0 96px; padding: 0; display: flex; gap: 0; flex-wrap: wrap; border-top: 1px solid var(--hair-dark); max-width: 540px; }
+    .hero-facts li { flex: 1 1 150px; padding: 18px 18px 0 0; }
+    .hero-facts b { display: block; font: 600 28px/1.1 var(--display); letter-spacing: -.03em; color: var(--white); white-space: nowrap; }
+    .hero-facts span { font-size: 15px; color: var(--on-dark-muted); }
 
-    /* phone illustration */
-    .device { position: relative; justify-self: center; width: 310px; align-self: end; }
-    .phone { position: relative; width: 290px; margin: 0 auto; background: #06131E; border-radius: 42px 42px 0 0; padding: 12px 12px 0; border: 1px solid rgba(234, 241, 246, .22); border-bottom: 0; box-shadow: 0 30px 80px rgba(0, 0, 0, .45); }
-    .screen { background: var(--paper); border-radius: 31px 31px 0 0; padding: 14px 16px 22px; color: var(--ink); min-height: 470px; }
-    .notch { width: 84px; height: 22px; border-radius: 999px; background: #06131E; margin: 0 auto 14px; }
-    .app-top { display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: var(--muted); margin-bottom: 12px; }
-    .app-top b { color: var(--brand-dark); font-size: 15px; }
-    .balance { background: var(--brand-dark); color: #fff; border-radius: 18px; padding: 16px 18px; margin-bottom: 12px; }
-    .balance small { display: block; font-size: 14px; color: var(--on-dark-muted); }
-    .balance .amt { font-size: 30px; font-weight: 700; letter-spacing: -.03em; line-height: 1.2; }
-    .balance .chip { display: inline-block; margin-top: 8px; font-size: 14px; background: rgba(198, 222, 237, .16); color: var(--sky); padding: 3px 10px; border-radius: 999px; }
-    .goal { background: #fff; border: 1px solid var(--hair); border-radius: 16px; padding: 12px 14px; margin-bottom: 12px; font-size: 14px; }
-    .goal .row { display: flex; justify-content: space-between; color: var(--muted); }
-    .goal .row b { color: var(--brand-dark); }
-    .goal .track { height: 8px; border-radius: 999px; background: var(--soft); margin-top: 8px; overflow: hidden; }
-    .goal .track i { display: block; width: 64%; height: 100%; background: var(--brand); border-radius: 999px; }
-    .sheet { background: #fff; border: 1px solid var(--hair); border-radius: 18px; padding: 14px; font-size: 14px; box-shadow: 0 10px 30px rgba(7, 28, 43, .1); }
-    .sheet .ttl { font-weight: 700; color: var(--brand-dark); font-size: 15px; margin-bottom: 8px; display: flex; gap: 8px; align-items: center; }
-    .sheet .ttl .ico { width: 18px; height: 18px; color: var(--brand); }
-    .sheet .line { display: flex; justify-content: space-between; gap: 10px; padding: 6px 0; border-top: 1px solid var(--hair); color: var(--muted); }
-    .sheet .line b { color: var(--brand-dark); text-align: right; }
-    .sheet .ok { margin-top: 10px; background: var(--brand); color: #fff; text-align: center; font-weight: 600; border-radius: 10px; padding: 9px; }
-    .paycard { position: absolute; left: -150px; bottom: 70px; width: 184px; height: 116px; border-radius: 16px; background: var(--brand); color: #fff; padding: 16px 18px; box-shadow: 0 24px 50px rgba(0, 0, 0, .4); transform: rotate(-9deg); border: 1px solid rgba(234, 241, 246, .25); }
-    .paycard .name { font-weight: 700; font-size: 16px; letter-spacing: -.01em; }
-    .paycard .name span { color: var(--sky); }
-    .paycard .emv { width: 34px; height: 26px; border-radius: 6px; background: var(--sky); margin-top: 10px; position: relative; }
-    .paycard .emv::after { content: ""; position: absolute; inset: 7px 0; border-top: 1.5px solid rgba(13, 47, 73, .45); border-bottom: 1.5px solid rgba(13, 47, 73, .45); }
-    .paycard .type { position: absolute; right: 18px; bottom: 14px; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--sky); }
-    .paycard .wave { position: absolute; right: 18px; top: 16px; width: 22px; height: 22px; color: var(--sky); }
-    .caption { position: absolute; right: -6px; top: -26px; font-size: 14px; color: var(--on-dark-muted); }
+    /* product scene */
+    .scene { position: relative; width: 420px; height: 600px; justify-self: center; align-self: end; margin-top: -64px; }
+    .phone { position: absolute; left: 62px; bottom: -70px; width: 300px; background: #02080D; border-radius: 50px; padding: 11px; box-shadow: 0 0 0 1.5px rgba(234, 241, 246, .28), 0 0 0 9px rgba(2, 8, 13, .55), 0 60px 120px rgba(0, 0, 0, .6); transform: rotate(3deg); }
+    .screen { background: var(--paper); border-radius: 40px; padding: 12px 14px 70px; color: var(--ink); height: 600px; overflow: hidden; position: relative; }
+    .status { display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 600; padding: 2px 12px 0; }
+    .island { width: 86px; height: 24px; border-radius: 999px; background: #02080D; }
+    .status .sig { display: inline-flex; gap: 3px; align-items: flex-end; }
+    .status .sig i { width: 3px; background: var(--ink); border-radius: 1px; }
+    .app-head { display: flex; align-items: center; justify-content: space-between; margin: 16px 2px 12px; font-size: 14px; color: var(--muted); }
+    .app-head .me { display: flex; align-items: center; gap: 9px; color: var(--ink); font-weight: 600; font-size: 15px; }
+    .avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: var(--sky); font: 600 14px/30px var(--sans); text-align: center; }
+    .balance { background: var(--deep); color: var(--white); border-radius: 22px; padding: 18px; position: relative; overflow: hidden; }
+    .balance::after { content: ""; position: absolute; right: -40px; top: -40px; width: 150px; height: 150px; border-radius: 50%; border: 22px solid rgba(198, 222, 237, .09); }
+    .balance small { font-size: 14px; color: var(--on-dark-muted); display: block; }
+    .balance .amt { font: 600 34px/1.15 var(--display); letter-spacing: -.04em; }
+    .balance .pill { display: inline-block; margin-top: 10px; font-size: 14px; background: rgba(198, 222, 237, .16); color: var(--sky); padding: 3px 11px; border-radius: 999px; }
+    .quick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 12px 0; }
+    .quick div { text-align: center; font-size: 14px; color: var(--muted); }
+    .quick i { width: 44px; height: 44px; border-radius: 50%; background: var(--white); border: 1px solid var(--hair); display: flex; align-items: center; justify-content: center; margin: 0 auto 4px; color: var(--brand); }
+    .quick .ico { width: 20px; height: 20px; }
+    .feed { background: var(--white); border: 1px solid var(--hair); border-radius: 20px; padding: 4px 14px; }
+    .feed .row { display: flex; align-items: center; gap: 11px; padding: 10px 0; border-top: 1px solid var(--hair); font-size: 14px; line-height: 1.3; }
+    .feed .row:first-child { border-top: 0; }
+    .feed .row i { width: 34px; height: 34px; border-radius: 11px; background: var(--ice); color: var(--brand); display: flex; align-items: center; justify-content: center; flex: none; }
+    .feed .row .ico { width: 18px; height: 18px; }
+    .feed .row b { display: block; color: var(--ink); font-size: 15px; }
+    .feed .row span { color: var(--muted); }
+    .float { position: absolute; background: var(--white); color: var(--ink); border-radius: 20px; box-shadow: 0 24px 60px rgba(0, 0, 0, .38); font-size: 14px; line-height: 1.35; }
+    .f-fee { right: -26px; top: 150px; width: 216px; padding: 14px 16px; animation: bob 7s ease-in-out infinite; }
+    .f-fee .t { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; margin-bottom: 8px; }
+    .f-fee .t .ico { width: 18px; height: 18px; color: var(--brand); }
+    .f-fee .l { display: flex; justify-content: space-between; gap: 8px; padding: 6px 0; border-top: 1px solid var(--hair); color: var(--muted); }
+    .f-fee .l b { color: var(--ink); text-align: right; }
+    .f-fee .go { margin-top: 8px; background: var(--deep); color: var(--white); border-radius: 999px; text-align: center; font-weight: 600; padding: 8px; }
+    .f-goal { left: -6px; top: 60px; padding: 12px 16px 12px 12px; display: flex; align-items: center; gap: 12px; animation: bob 8s ease-in-out -3s infinite; }
+    .ring { width: 54px; height: 54px; flex: none; }
+    .ring circle { fill: none; stroke-width: 6; }
+    .ring .bg { stroke: var(--ice); }
+    .ring .fg { stroke: var(--brand); stroke-linecap: round; stroke-dasharray: 138.2; stroke-dashoffset: 49.8; transform: rotate(-90deg); transform-origin: 50% 50%; }
+    .f-goal b { display: block; font-size: 15px; }
+    .f-goal span { color: var(--muted); }
+    .pcard { position: absolute; left: -44px; bottom: 96px; width: 232px; transform: rotate(-12deg); animation: bob2 9s ease-in-out -2s infinite; z-index: 3; }
+    .scene .note { position: absolute; right: -8px; bottom: 18px; font-size: 14px; color: var(--on-dark-muted); z-index: 5; writing-mode: vertical-rl; }
 
-    /* trust band */
-    .trust { padding: 0; background: var(--surface); border-bottom: 1px solid var(--hair); }
-    .trust ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
-    .trust li { display: flex; gap: 14px; align-items: flex-start; padding: 26px 22px; border-left: 1px solid var(--hair); font-size: 15.5px; color: var(--muted); line-height: 1.45; }
-    .trust li:first-child { border-left: 0; padding-left: 0; }
-    .trust b { display: block; color: var(--brand-dark); font-size: 16.5px; }
-    .trust .ico { color: var(--brand); width: 26px; height: 26px; margin-top: 2px; }
+    /* payment card render */
+    .card3d { aspect-ratio: 1.586; border-radius: 16px; padding: 9% 9%; position: relative; overflow: hidden; color: var(--white); background: linear-gradient(135deg, #1A6AA0 0%, #114E78 46%, #0B3553 100%); box-shadow: 0 26px 60px rgba(3, 12, 19, .45), inset 0 0 0 1px rgba(255, 255, 255, .22), inset 0 1px 0 rgba(255, 255, 255, .5); }
+    .card3d::before { content: ""; position: absolute; right: -24%; bottom: -70%; width: 92%; aspect-ratio: 1; border-radius: 50%; border: 26px solid rgba(255, 255, 255, .07); box-shadow: 0 0 0 26px rgba(255, 255, 255, .035), 0 0 0 52px rgba(255, 255, 255, .02); }
+    .card3d::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 38%, rgba(255, 255, 255, .16) 47%, transparent 56%); }
+    .card3d .brandname { font: 600 17px/1 var(--display); letter-spacing: -.02em; position: relative; }
+    .card3d .brandname b { opacity: .7; font-weight: 600; }
+    .card3d .emv { width: 15%; aspect-ratio: 1.3; border-radius: 5px; background: linear-gradient(135deg, #E9F3FA, #9FBFD6); margin-top: 11%; position: relative; }
+    .card3d .emv::after { content: ""; position: absolute; inset: 28% 0; border-top: 1.5px solid rgba(6, 21, 32, .4); border-bottom: 1.5px solid rgba(6, 21, 32, .4); }
+    .card3d .wave { position: absolute; right: 9%; top: 12%; width: 22px; height: 22px; opacity: .85; }
+    .card3d .tier { position: absolute; left: 9%; bottom: 11%; font-size: 14px; letter-spacing: .18em; text-transform: uppercase; opacity: .9; }
+    .card3d .kind { position: absolute; right: 9%; bottom: 11%; font-size: 14px; letter-spacing: .18em; text-transform: uppercase; opacity: .7; }
+    .card3d.light { background: linear-gradient(135deg, #FFFFFF 0%, #DCEAF4 55%, #B9D3E6 100%); color: var(--deep); box-shadow: 0 26px 60px rgba(3, 12, 19, .22), inset 0 0 0 1px rgba(6, 21, 32, .1), inset 0 1px 0 #fff; }
+    .card3d.light::before { border-color: rgba(17, 78, 120, .08); box-shadow: 0 0 0 26px rgba(17, 78, 120, .045), 0 0 0 52px rgba(17, 78, 120, .025); }
+    .card3d.light .emv { background: linear-gradient(135deg, #114E78, #0D2F49); }
+    .card3d.light .emv::after { border-color: rgba(198, 222, 237, .5); }
+    .card3d.black { background: linear-gradient(135deg, #17384F 0%, #061520 48%, #02080D 100%); }
 
-    /* cards */
-    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .card { background: var(--surface); border: 1px solid var(--hair); border-radius: 20px; padding: 30px; }
-    .card p { color: var(--muted); margin: 0; }
-    .badge { width: 52px; height: 52px; border-radius: 14px; background: var(--soft); color: var(--brand); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px; }
-    .badge .ico { width: 26px; height: 26px; }
-    .steps { counter-reset: step; position: relative; }
-    .steps .card { position: relative; }
-    .steps .num { position: absolute; top: 28px; right: 28px; font-size: 44px; font-weight: 700; line-height: 1; color: var(--soft); letter-spacing: -.04em; }
-    #how { background: var(--surface); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
-    #how .card { background: var(--paper); }
+    /* marquee */
+    .marquee { background: var(--sky); color: var(--deep); overflow: hidden; padding: 0; border-bottom: 1px solid rgba(6, 21, 32, .08); }
+    .marquee .track { display: flex; width: max-content; animation: slide 46s linear infinite; }
+    .marquee ul { list-style: none; display: flex; margin: 0; padding: 20px 0; }
+    .marquee li { font: 600 19px/1 var(--display); letter-spacing: -.02em; white-space: nowrap; padding: 0 26px; display: flex; align-items: center; gap: 52px; }
+    .marquee li::after { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--brand); }
+
+    /* benefits bento */
+    .head { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: end; margin-bottom: 56px; }
+    .head p { color: var(--muted); font-size: 20px; margin: 0; max-width: 460px; justify-self: end; }
+    .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+    .tile { border-radius: var(--r-xl); padding: 36px; position: relative; overflow: hidden; min-height: 340px; display: flex; flex-direction: column; background: var(--white); transition: transform .4s var(--ease); }
+    .tile:hover { transform: translateY(-6px); }
+    .tile h3 { margin-bottom: 12px; max-width: 16ch; }
+    .tile p { color: var(--muted); margin: 0; max-width: 40ch; }
+    .tile .top { margin-bottom: auto; padding-bottom: 28px; }
+    .t-zero { grid-column: span 4; background: var(--deep); color: var(--on-dark); }
+    .t-zero h3 { color: var(--white); }
+    .t-zero p { color: var(--on-dark-muted); }
+    .t-zero .zero { font: 600 clamp(84px, 12vw, 168px)/.86 var(--display); letter-spacing: -.06em; color: var(--sky); }
+    .t-zero .zero small { font: 600 20px/1 var(--sans); letter-spacing: 0; color: var(--on-dark-muted); margin-left: 12px; }
+    .t-zero::after { content: ""; position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border-radius: 50%; border: 54px solid rgba(198, 222, 237, .06); box-shadow: 0 0 0 54px rgba(198, 222, 237, .03); }
+    .t-send { grid-column: span 2; background: var(--sky); }
+    .t-send p { color: #2B4B63; }
+    .chat { display: grid; gap: 8px; }
+    .chat .b { max-width: 88%; padding: 10px 14px; border-radius: 18px; font-size: 15px; line-height: 1.3; background: var(--white); color: var(--ink); border-bottom-left-radius: 6px; justify-self: start; }
+    .chat .b.me { background: var(--deep); color: var(--white); border-radius: 18px; border-bottom-right-radius: 6px; justify-self: end; display: flex; align-items: center; gap: 8px; }
+    .chat .b.me .ico { width: 16px; height: 16px; color: var(--sky); }
+    .t-save { grid-column: span 2; background: var(--white); }
+    .bigring { width: 150px; height: 150px; position: relative; }
+    .bigring svg { width: 100%; height: 100%; }
+    .bigring circle { fill: none; stroke-width: 12; }
+    .bigring .bg { stroke: var(--ice); }
+    .bigring .fg { stroke: var(--brand); stroke-linecap: round; stroke-dasharray: 389.6; stroke-dashoffset: 389.6; transform: rotate(-90deg); transform-origin: 50% 50%; transition: stroke-dashoffset 1.6s var(--ease) .2s; }
+    .in .bigring .fg, .bigring.in .fg { stroke-dashoffset: 140.2; }
+    .bigring span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 600 34px/1 var(--display); letter-spacing: -.04em; }
+    .t-clear { grid-column: span 4; background: var(--white); flex-direction: row; gap: 36px; align-items: center; }
+    .t-clear .copy { flex: 1; }
+    .receipt { flex: none; width: 300px; background: var(--paper); border: 1px solid var(--hair); border-radius: 22px; padding: 18px; font-size: 15px; }
+    .receipt .t { display: flex; gap: 8px; align-items: center; font-weight: 600; margin-bottom: 10px; }
+    .receipt .t .ico { color: var(--brand); width: 20px; height: 20px; }
+    .receipt .l { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-top: 1px solid var(--hair); color: var(--muted); }
+    .receipt .l b { color: var(--ink); text-align: right; }
+    .receipt .go { margin-top: 10px; background: var(--deep); color: var(--white); text-align: center; font-weight: 600; border-radius: 999px; padding: 11px; }
+
+    /* how it works */
+    #how { background: var(--deep); color: var(--on-dark); overflow: hidden; }
+    #how h2 { color: var(--white); margin-bottom: 64px; }
+    #how .eyebrow { color: var(--sky); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--hair-dark); }
+    .step { padding: 34px 34px 0 0; border-left: 1px solid var(--hair-dark); padding-left: 34px; }
+    .step:first-child { border-left: 0; padding-left: 0; }
+    .step .n { font: 600 clamp(72px, 9vw, 124px)/.9 var(--display); letter-spacing: -.06em; color: transparent; -webkit-text-stroke: 1.5px var(--sky); margin-bottom: 26px; }
+    .step h3 { color: var(--white); margin-bottom: 12px; }
+    .step p { color: var(--on-dark-muted); margin: 0; }
+    .step .tagline { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--sky); border: 1px solid var(--hair-dark); border-radius: 999px; padding: 8px 14px; }
+    .step .tagline .ico { width: 18px; height: 18px; }
 
     /* pricing */
-    .value { font-size: 20px; color: var(--muted); max-width: 720px; margin-bottom: 44px; }
-    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
-    .plan { background: var(--surface); border: 1px solid var(--hair); border-radius: 22px; padding: 30px; display: flex; flex-direction: column; position: relative; }
-    .plan.recommended { border: 2px solid var(--brand); box-shadow: 0 22px 54px rgba(17, 78, 120, .16); }
-    .plan .tag { position: absolute; top: -15px; left: 26px; background: var(--brand); color: #fff; font-size: 14px; font-weight: 600; padding: 4px 14px; border-radius: 999px; letter-spacing: .02em; }
-    .plan .head { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
-    .plan .head .badge { width: 44px; height: 44px; border-radius: 12px; margin: 0; }
-    .plan .head .badge .ico { width: 22px; height: 22px; }
-    .plan h3 { margin: 0; font-size: 22px; }
-    .plan .for { color: var(--muted); font-size: 15.5px; min-height: 50px; margin-bottom: 16px; }
-    .plan .price { font-size: 46px; font-weight: 700; color: var(--brand-dark); line-height: 1; letter-spacing: -.035em; }
-    .plan .unit { color: var(--muted); font-size: 15.5px; margin: 4px 0 20px; }
-    .plan ul { list-style: none; padding: 0; margin: 0 0 26px; flex: 1; }
-    .plan li { display: flex; gap: 10px; align-items: flex-start; padding: 9px 0; border-top: 1px solid var(--hair); font-size: 16px; }
-    .plan li:first-child { border-top: 0; }
-    .plan li .ico { width: 20px; height: 20px; color: var(--brand); margin-top: 3px; stroke-width: 2.2; }
-    .plan li.fee .ico { color: var(--muted); }
-    .plan li strong { color: var(--brand-dark); }
+    #pricing { background: var(--paper); }
+    #pricing .head { margin-bottom: 64px; }
+    .value { font-size: 22px; color: var(--muted); margin: 0; max-width: 430px; justify-self: end; }
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+    .plan { background: var(--white); border-radius: var(--r-xl); padding: 30px 30px 32px; display: flex; flex-direction: column; position: relative; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+    .plan:hover { transform: translateY(-8px); box-shadow: 0 30px 70px rgba(6, 21, 32, .12); }
+    .plan .art { margin: -6px 12px 28px; transition: transform .5s var(--ease); }
+    .plan:hover .art { transform: rotate(-4deg) translateY(-6px) scale(1.03); }
+    .plan .tag { display: inline-block; vertical-align: middle; margin-left: 10px; background: var(--sky); color: var(--deep); font: 600 14px/1 var(--sans); letter-spacing: 0; padding: 7px 13px; border-radius: 999px; position: relative; top: -3px; }
+    .plan h3 { font-size: 30px; margin-bottom: 8px; }
+    .plan .for { color: var(--muted); font-size: 16px; min-height: 50px; margin-bottom: 20px; }
+    .plan .price { font: 600 64px/1 var(--display); letter-spacing: -.055em; }
+    .plan .unit { color: var(--muted); font-size: 16px; margin: 6px 0 24px; }
+    .plan ul { list-style: none; padding: 0; margin: 0 0 30px; flex: 1; }
+    .plan li { display: flex; gap: 11px; align-items: flex-start; padding: 11px 0; border-top: 1px solid var(--hair); font-size: 16.5px; line-height: 1.4; }
+    .plan li .ico { width: 20px; height: 20px; color: var(--brand); margin-top: 2px; stroke-width: 2.3; }
+    .plan li.fee .ico { color: var(--muted); stroke-width: 1.8; }
     .plan .btn { width: 100%; }
-    .conditions { margin-top: 24px; font-size: 14.5px; color: var(--muted); }
-    .compare { margin-top: 48px; background: var(--surface); border: 1px solid var(--hair); border-radius: 20px; padding: 28px 30px; }
+    .plan.recommended { background: var(--deep); color: var(--on-dark); }
+    .plan.recommended h3, .plan.recommended .price { color: var(--white); }
+    .plan.recommended .for, .plan.recommended .unit { color: var(--on-dark-muted); }
+    .plan.recommended li { border-color: var(--hair-dark); }
+    .plan.recommended li .ico { color: var(--sky); }
+    .plan.recommended strong { color: var(--white); }
+    .conditions { margin: 26px 4px 0; font-size: 15px; color: var(--muted); max-width: 900px; }
+
+    .duo { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 64px; }
+    .compare { background: var(--white); border-radius: var(--r-xl); padding: 36px; }
+    .compare h3 { margin-bottom: 10px; }
+    .compare .note { font-size: 15px; color: var(--muted); margin: 0 0 22px; }
+    .compare .scroll { overflow-x: auto; }
     .compare table { width: 100%; border-collapse: collapse; font-size: 16px; }
-    .compare th, .compare td { text-align: left; padding: 12px 8px; border-bottom: 1px solid var(--hair); vertical-align: top; }
-    .compare tr:last-child td { border-bottom: 0; }
-    .compare th { color: var(--muted); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: .08em; }
+    .compare th, .compare td { text-align: left; padding: 14px 6px; border-top: 1px solid var(--hair); vertical-align: top; }
+    .compare th { color: var(--muted); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: .08em; border-top: 0; padding-top: 0; }
     .compare td.n, .compare th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-    .compare tr.us td { font-weight: 700; color: var(--brand-dark); }
-    .compare .meter { display: block; height: 8px; border-radius: 999px; background: var(--soft); margin-top: 8px; width: 100%; max-width: 260px; overflow: hidden; }
-    .compare .meter i { display: block; height: 100%; background: #9DB7CB; border-radius: 999px; }
-    .compare tr.us .meter i { background: var(--brand); }
-    .compare .note { font-size: 14.5px; color: var(--muted); margin: 0 0 12px; max-width: 760px; }
-    .calc { margin-top: 24px; background: var(--brand-dark); color: var(--on-dark); border-radius: 20px; padding: 30px; }
-    .calc h3 { color: #fff; display: flex; gap: 10px; align-items: center; }
-    .calc h3 .ico { color: var(--sky); }
-    .calc .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0 20px; }
-    .calc label { display: block; font-size: 15.5px; color: var(--on-dark-muted); }
-    .calc input { display: block; width: 100%; min-height: 52px; margin-top: 6px; padding: 0 14px; font: inherit; font-weight: 600; color: var(--ink); background: #fff; border: 0; border-radius: 12px; }
-    .calc .results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .calc .res { border: 1px solid rgba(234, 241, 246, .22); border-radius: 14px; padding: 14px 16px; }
-    .calc .res.best { background: var(--sky); border-color: var(--sky); }
-    .calc .res .name { font-size: 15px; color: var(--on-dark-muted); }
-    .calc .res .amount { font-size: 28px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
-    .calc .res.best .name, .calc .res.best .amount { color: var(--brand-dark); }
-    .calc .verdict { margin: 18px 0 0; font-weight: 600; color: #fff; }
-    .calc .note { font-size: 14.5px; color: var(--on-dark-muted); margin: 8px 0 0; }
-    .analysis { margin-top: 24px; font-size: 15.5px; color: var(--muted); }
+    .compare td.total { font-weight: 600; }
+    .compare tr.us td { font-weight: 600; }
+    .compare tr.us td.total { font: 600 22px/1.2 var(--display); letter-spacing: -.03em; color: var(--brand); }
+    .meter { display: block; height: 10px; border-radius: 999px; background: var(--ice); margin-top: 10px; width: 100%; max-width: 230px; overflow: hidden; }
+    .meter i { display: block; height: 100%; width: 0; background: #A9C0D2; border-radius: 999px; transition: width 1.3s var(--ease) .15s; }
+    .us .meter i { background: var(--brand); }
+    .in .meter i { width: var(--w); }
+    .calc { background: var(--deep); color: var(--on-dark); border-radius: var(--r-xl); padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 48px; align-items: start; position: relative; overflow: hidden; }
+    .calc::before { content: ""; position: absolute; left: -160px; bottom: -220px; width: 460px; height: 460px; border-radius: 50%; border: 50px solid rgba(198, 222, 237, .05); box-shadow: 0 0 0 50px rgba(198, 222, 237, .025); pointer-events: none; }
+    .calc > * { position: relative; }
+    .calc .in h3 { max-width: 12ch; }
+    .calc .note { grid-column: 1 / -1; }
+    .calc h3 { color: var(--white); margin-bottom: 26px; font-size: 34px; }
+    .calc label { display: block; font-size: 16px; color: var(--on-dark-muted); margin-bottom: 16px; }
+    .calc input { display: block; width: 100%; min-height: 58px; margin-top: 8px; padding: 0 18px; font: 600 22px/1 var(--display); letter-spacing: -.02em; color: var(--white); background: rgba(234, 241, 246, .08); border: 1.5px solid var(--hair-dark); border-radius: 16px; transition: border-color .2s, background .2s; }
+    .calc input:focus { border-color: var(--sky); background: rgba(234, 241, 246, .12); outline: none; }
+    .calc .results { display: grid; gap: 8px; margin-top: 6px; }
+    .calc .res { display: flex; justify-content: space-between; align-items: center; border: 1.5px solid var(--hair-dark); border-radius: 18px; padding: 18px 22px; transition: background .3s, border-color .3s, transform .3s var(--ease); }
+    .calc .res .name { font-size: 16px; font-weight: 600; color: var(--on-dark); }
+    .calc .res .amount { font: 600 32px/1 var(--display); letter-spacing: -.03em; color: var(--white); font-variant-numeric: tabular-nums; }
+    .calc .res.best { background: var(--sky); border-color: var(--sky); transform: scale(1.02); }
+    .calc .res.best .name, .calc .res.best .amount { color: var(--deep); }
+    .calc .verdict { margin: 18px 0 0; font-weight: 600; font-size: 18px; color: var(--white); }
+    .calc .note { font-size: 14.5px; color: var(--on-dark-muted); margin: 18px 0 0; max-width: 820px; }
+    .analysis { margin-top: 28px; font-size: 16px; color: var(--muted); }
     .analysis a { color: var(--brand); font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; }
 
     /* faq */
-    .faq .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: start; }
-    .faq details { background: var(--surface); border: 1px solid var(--hair); border-radius: 14px; padding: 4px 22px; margin-bottom: 12px; }
-    .faq summary { cursor: pointer; font-weight: 600; min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 14px; list-style: none; }
+    #faq { background: var(--white); }
+    .faq .wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 56px; align-items: start; }
+    .faq .side p { color: var(--muted); font-size: 20px; margin-top: 22px; max-width: 320px; }
+    .faq details { border-top: 1px solid var(--hair); }
+    .faq details:last-child { border-bottom: 1px solid var(--hair); }
+    .faq summary { cursor: pointer; font: 600 21px/1.25 var(--sans); letter-spacing: -.01em; min-height: 76px; padding: 16px 0; display: flex; align-items: center; justify-content: space-between; gap: 18px; list-style: none; }
     .faq summary::-webkit-details-marker { display: none; }
-    .faq summary .ico { color: var(--brand); transition: transform .15s; }
-    .faq details[open] summary .ico { transform: rotate(180deg); }
-    .faq details p { color: var(--muted); margin: 0 0 18px; }
-    .faq .side p { color: var(--muted); font-size: 19px; }
+    .faq summary i { width: 40px; height: 40px; border-radius: 50%; background: var(--paper); display: flex; align-items: center; justify-content: center; flex: none; transition: transform .3s var(--ease), background .2s; }
+    .faq summary:hover i { background: var(--sky); }
+    .faq details[open] summary i { transform: rotate(45deg); background: var(--deep); color: var(--white); }
+    .faq details p { color: var(--muted); margin: 0 0 26px; max-width: 58ch; }
 
     /* contact */
-    .contact { background: var(--brand-dark); color: var(--on-dark); }
-    .contact .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
-    .contact h2 { color: #fff; }
-    .contact p { color: var(--on-dark-muted); font-size: 19px; }
-    .contact .box { background: rgba(234, 241, 246, .07); border: 1px solid rgba(234, 241, 246, .18); border-radius: 20px; padding: 28px; }
-    .contact .box a { color: #fff; font-weight: 700; font-size: 20px; word-break: break-all; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; }
-    .contact .box a .ico { color: var(--sky); }
-    .contact .box p { font-size: 15.5px; margin: 8px 0 0; }
+    .contact { background: var(--sky); color: var(--deep); padding: 110px 0; overflow: hidden; }
+    .contact::before { content: ""; position: absolute; right: -180px; top: 50%; width: 640px; height: 640px; margin-top: -320px; border-radius: 50%; border: 70px solid rgba(17, 78, 120, .07); box-shadow: 0 0 0 70px rgba(17, 78, 120, .04); }
+    .contact .wrap { position: relative; }
+    .contact h2 { margin-bottom: 20px; }
+    .contact p { font-size: 22px; color: #2B4B63; max-width: 520px; margin-bottom: 34px; }
+    .contact .mail { font-size: 19px; word-break: break-all; }
+    .contact .legal { font-size: 15.5px; color: #2B4B63; margin: 26px 0 0; }
 
-    footer { background: var(--deep); padding: 30px 0; color: var(--on-dark-muted); font-size: 14.5px; }
-    footer .wrap { display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; align-items: center; }
-    footer a { color: var(--on-dark); display: inline-flex; align-items: center; min-height: 44px; }
+    footer { background: var(--deep); color: var(--on-dark-muted); font-size: 15px; padding: 54px 0 34px; }
+    footer .top { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; padding-bottom: 30px; border-bottom: 1px solid var(--hair-dark); margin-bottom: 22px; }
+    footer .links { display: flex; flex-wrap: wrap; gap: 0 6px; }
+    footer .links a { color: var(--on-dark); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 999px; }
+    footer .links a:hover { background: rgba(234, 241, 246, .1); }
+    footer .bottom { display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; align-items: center; }
+    footer .bottom a { color: var(--on-dark); display: inline-flex; align-items: center; min-height: 44px; }
 
-    @media (max-width: 960px) {
-      .paycard { left: -60px; bottom: 16px; }
-      .sheet { margin-bottom: 120px; }
-      .hero .wrap, .grid3, .plans, .faq .wrap, .contact .wrap { grid-template-columns: 1fr; }
-      .hero { padding-top: 56px; }
-      .facts { margin-bottom: 44px; }
-      .device { margin-top: 8px; }
-      .trust ul { grid-template-columns: 1fr 1fr; }
-      .trust li { border-left: 0; padding: 20px 12px 20px 0; border-top: 1px solid var(--hair); }
-      .trust li:nth-child(-n+2) { border-top: 0; }
-      section { padding: 68px 0; }
+    /* motion */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @keyframes bob2 { 0%, 100% { transform: rotate(-12deg) translateY(0); } 50% { transform: rotate(-9deg) translateY(-14px); } }
+    @keyframes slide { to { transform: translateX(-50%); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+    .hero h1, .hero .lead, .hero .cta, .hero-facts { animation: rise .9s var(--ease) both; }
+    .hero .lead { animation-delay: .1s; } .hero .cta { animation-delay: .2s; } .hero-facts { animation-delay: .3s; }
+    .scene { animation: rise 1.1s var(--ease) .15s both; }
+    .js .reveal { opacity: 0; transform: translateY(34px); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: var(--d, 0s); }
+    .js .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .js .reveal { opacity: 1; transform: none; }
+      .meter i { width: var(--w); } .bigring .fg { stroke-dashoffset: 140.2; }
+      html { scroll-behavior: auto; }
+    }
+
+    @media (max-width: 980px) {
+      section { padding: 84px 0; }
+      .hero-grid, .head, .duo, .faq .wrap, .calc { grid-template-columns: 1fr; }
+      .head p, .value { justify-self: start; }
+      .head { gap: 20px; margin-bottom: 40px; }
+      .hero-facts { margin-bottom: 30px; }
+      .scene { margin-top: 10px; height: 560px; }
+      .hero .lead { margin-top: 30px; }
+      .bento { grid-template-columns: 1fr 1fr; }
+      .t-zero, .t-clear { grid-column: span 2; }
+      .t-send, .t-save { grid-column: span 1; }
+      .steps, .plans { grid-template-columns: 1fr; }
+      .step, .step:first-child { border-left: 0; padding: 30px 0 34px; border-top: 1px solid var(--hair-dark); }
+      .steps { border-top: 0; }
+      .step:first-child { border-top: 1px solid var(--hair-dark); }
+      .plan .art { max-width: 300px; margin-left: 0; }
       .plan .for { min-height: 0; }
-      .faq .wrap, .contact .wrap { gap: 20px; }
+      .faq .wrap { gap: 28px; }
+      nav li.cta { display: none; }
     }
     @media (max-width: 600px) {
-      body { font-size: 16px; }
-      .wrap { padding: 0 18px; }
+      body { font-size: 17px; }
+      .wrap { padding: 0 20px; }
+      section { padding: 68px 0; }
       header { position: static; }
-      .nav { padding-top: 6px; padding-bottom: 4px; }
+      .nav { padding-top: 8px; padding-bottom: 6px; min-height: 0; }
       nav { width: 100%; }
-      nav ul { gap: 0; margin: 0 -9px; }
-      nav a { padding: 0 9px; min-height: 44px; font-size: 16px; }
-      .hero .lead { font-size: 19px; }
+      nav ul { margin: 0 -10px; gap: 0; }
+      nav a { padding: 0 10px; font-size: 16px; min-height: 44px; }
+      .hero { padding-top: 48px; }
+      .hero .lead { font-size: 19px; margin: 22px 0 26px; }
       .hero .cta .btn { width: 100%; }
-      .device { width: 270px; }
-      .phone { width: 250px; }
-      .screen { min-height: 430px; }
-      .paycard { left: -26px; bottom: 14px; width: 176px; height: 110px; }
-      .sheet { margin-bottom: 104px; }
-      .paycard .emv { margin-top: 10px; }
-      .caption { right: 0; }
-      .trust ul { grid-template-columns: 1fr; }
-      .trust li, .trust li:nth-child(-n+2) { border-top: 1px solid var(--hair); padding: 18px 0; }
-      .trust li:first-child { border-top: 0; }
-      .card, .plan { padding: 24px 22px; }
-      .plan .price { font-size: 40px; }
-      .compare { padding: 20px 16px; overflow-x: auto; }
-      .compare table { min-width: 540px; }
-      .btn { min-height: 52px; }
-      .calc { padding: 22px 18px; }
-      .calc .fields, .calc .results { grid-template-columns: 1fr; }
-      .intro, .value { font-size: 17.5px; margin-bottom: 30px; }
+      .hero-facts li { flex: 1 1 100%; padding: 14px 0; border-bottom: 1px solid var(--hair-dark); display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+      .hero-facts b { font-size: 24px; }
+      .hero-facts { border-top: 1px solid var(--hair-dark); }
+      .scene { width: 320px; height: 500px; }
+      .phone { left: 36px; width: 252px; padding: 9px; border-radius: 44px; bottom: -110px; }
+      .screen { border-radius: 36px; height: 560px; padding: 10px 11px 60px; }
+      .f-fee { right: -14px; top: 190px; width: 190px; padding: 12px 13px; }
+      .f-goal { left: -10px; top: 44px; }
+      .pcard { left: -16px; bottom: 34px; width: 176px; }
+      .card3d .brandname { font-size: 15px; }
+      .scene .note { writing-mode: horizontal-tb; right: 0; top: -4px; bottom: auto; }
+      .marquee li { font-size: 17px; padding: 0 18px; gap: 36px; }
+      .bento { grid-template-columns: 1fr; }
+      .t-zero, .t-clear, .t-send, .t-save { grid-column: span 1; }
+      .tile { padding: 28px 24px; min-height: 0; border-radius: 28px; }
+      .tile .top { padding-bottom: 26px; }
+      .t-clear { flex-direction: column; align-items: stretch; gap: 24px; }
+      .receipt { width: 100%; }
+      .plan { padding: 26px 22px 26px; border-radius: 28px; }
+      .plan .price { font-size: 54px; }
+      .compare, .calc { padding: 26px 20px; border-radius: 28px; }
+      .calc h3 { font-size: 28px; }
+      .calc .res .amount { font-size: 26px; }
+      .compare table { min-width: 520px; }
+      .faq summary { font-size: 19px; min-height: 64px; }
+      .contact { padding: 76px 0; }
+      .contact p { font-size: 19px; }
+      .contact .btn { width: 100%; font-size: 16px; padding: 0 16px; }
+      footer .top { flex-direction: column; align-items: flex-start; }
+      footer .links { margin: 0 -12px; }
     }
   </style>
 </head>
 <body>
   <svg class="sprite" aria-hidden="true" focusable="false">
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
-    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M14.8 9.2a3.4 3.4 0 1 0 0 5.6M7.8 11h5.4M7.8 13.2h5.4"/></symbol>
-    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h3.5"/></symbol>
-    <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 9h13l-3.5-3.5M20 15H7l3.5 3.5"/></symbol>
-    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.4c0 4.3-2.9 7.6-7 9-4.1-1.4-7-4.7-7-9V6.100z"/><path d="M9 12.200l2.200 2.200 3.900-4.200"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.500l4.500 4.500L19 7.500"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.500" width="18" height="13" rx="2.500"/><path d="M3 10h18M7 15h3.500"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 9h13l-3.500-3.500M20 15H7l3.500 3.500"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.500"/><circle cx="12" cy="12" r="4.500"/><circle cx="12" cy="12" r=".800"/></symbol>
     <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.500 12s3.500-6.500 9.500-6.500 9.500 6.500 9.500 6.500-3.500 6.500-9.500 6.500S2.500 12 2.500 12z"/><circle cx="12" cy="12" r="2.800"/></symbol>
-    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M19.500 12a7.500 7.500 0 0 1-13 5.100M4.500 12a7.500 7.500 0 0 1 13-5.100"/><path d="M17.500 3.500v3.700h-3.700M6.500 20.500v-3.700h3.700"/></symbol>
-    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.500" r="3.300"/><path d="M2.800 19.500c.5-3.300 3-5.300 6.200-5.300s5.700 2 6.200 5.300M15.500 5.500a3.300 3.300 0 0 1 0 6.200M18 14.700c1.800.8 3 2.400 3.300 4.800"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.800" width="10" height="18.400" rx="2.400"/><path d="M11 18h2"/></symbol>
-    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3.500h7l4 4V20a.5.5 0 0 1-.5.500h-10.500a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.500z"/><path d="M14 3.500v4h4M9.500 12h5M9.500 15.500h5"/></symbol>
-    <symbol id="i-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.500"/><path d="M12 8.200v7.600M8.200 12h7.600"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3.500h7l4 4V20a.500.500 0 0 1-.500.500h-10.500a.500.500 0 0 1-.500-.500V4a.500.500 0 0 1 .500-.500z"/><path d="M14 3.500v4h4M9.500 12h5M9.500 15.500h5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.500"/><path d="M3.500 12h17M12 3.500c2.600 2.400 3.800 5.200 3.800 8.500s-1.200 6.100-3.800 8.500c-2.600-2.400-3.800-5.200-3.800-8.500s1.200-6.100 3.800-8.500z"/></symbol>
     <symbol id="i-cash" viewBox="0 0 24 24"><rect x="2.800" y="6.500" width="18.400" height="11" rx="2"/><circle cx="12" cy="12" r="2.600"/><path d="M6 9.500v5M18 9.500v5"/></symbol>
-    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2.500"/><path d="M8.500 7.500h7M8.500 12h.01M12 12h.01M15.500 12h.01M8.500 16h.01M12 16h.01M15.500 16h.01"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.500" width="18" height="13" rx="2.500"/><path d="M4 7.500l8 6 8-6"/></symbol>
-    <symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9.500l6 6 6-6"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-wave" viewBox="0 0 24 24"><path d="M8 8.500a5 5 0 0 1 0 7M12 6a8.500 8.500 0 0 1 0 12M16 3.500a12 12 0 0 1 0 17"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.500h6L10 21l8-10.500h-6z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.800" width="10" height="18.400" rx="2.400"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-dots" viewBox="0 0 24 24"><path d="M6 12h.01M12 12h.01M18 12h.01"/></symbol>
   </svg>
 
   <div class="project">
@@ -286,7 +406,7 @@
   </div>
   <header>
     <div class="wrap nav">
-      <a class="logo" href="#top"><span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M9 23V9l14 14V9"/></svg></span><span class="word">Novčić<b>Pay</b></span></a>
+      <a class="logo" href="#top"><span class="coin" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M10 23V9l12 14V9"/></svg></span><span>Novčić<b>Pay</b></span></a>
       <nav aria-label="Main">
         <ul>
           <li><a href="#benefits">Benefits</a></li>
@@ -294,6 +414,7 @@
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li class="cta"><a href="#pricing">See the pricing</a></li>
         </ul>
       </nav>
     </div>
@@ -301,77 +422,99 @@
 
   <main id="top">
     <section class="hero">
+      <svg class="rings" viewBox="0 0 1100 1100" fill="none" stroke="currentColor" aria-hidden="true">
+        <circle cx="550" cy="550" r="250" stroke-width="1.500"/><circle cx="550" cy="550" r="350" stroke-width="1.500"/><circle cx="550" cy="550" r="450" stroke-width="1.500"/>
+        <g class="spin"><circle cx="550" cy="550" r="300" stroke-width="1.500" stroke-dasharray="3 14"/><circle cx="550" cy="550" r="500" stroke-width="1.500" stroke-dasharray="3 18"/></g>
+      </svg>
       <div class="wrap">
+        <h1><span class="l1">No monthly fee.</span> <em>Pay only for what you use.</em></h1>
+        <div class="hero-grid">
         <div>
-          <h1>No monthly fee. Pay only for what you use.</h1>
           <p class="lead">A euro account and debit card for everyone aged 18 to 26 in Croatia. Instant transfers to friends, savings goals, and a price list you can read in one minute.</p>
           <div class="cta">
-            <a class="btn light" href="#pricing">See the pricing <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="text" href="#how">How it works</a>
+            <a class="btn primary" href="#pricing">See the pricing <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn line-dark" href="#how">How it works</a>
           </div>
-          <ul class="facts">
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span><strong>€0.00 per month</strong> for the account and the card</span></li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Cash withdrawal <strong>€1.50 each</strong></span></li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Other currencies <strong>1.5% above the ECB rate</strong>, shown before you pay</span></li>
+          <ul class="hero-facts">
+            <li><b>€0.00</b><span>per month, account and card</span></li>
+            <li><b>€1.50</b><span>per cash withdrawal</span></li>
+            <li><b>1.5%</b><span>above the ECB rate abroad</span></li>
           </ul>
         </div>
-        <div class="device" aria-hidden="true">
-          <span class="caption">App screen, for illustration</span>
+        <div class="scene" aria-hidden="true">
+          <span class="note">App screens, for illustration</span>
           <div class="phone">
             <div class="screen">
-              <div class="notch"></div>
-              <div class="app-top"><b>Novčić Basic</b><span>€0.00 per month</span></div>
-              <div class="balance"><small>Euro account</small><div class="amt">€ 412.60</div><span class="chip">Debit card active</span></div>
-              <div class="goal"><div class="row"><b>Savings goal · Summer trip</b><span>64%</span></div><div class="track"><i></i></div></div>
-              <div class="sheet">
-                <div class="ttl"><svg class="ico"><use href="#i-eye"/></svg>Before you pay</div>
-                <div class="line"><span>Payment in another currency</span><b>USD</b></div>
-                <div class="line"><span>Conversion fee</span><b>1.5% above the ECB rate</b></div>
-                <div class="ok">Confirm payment</div>
+              <div class="status"><span>9:41</span><span class="island"></span><span class="sig"><i style="height:5px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:14px"></i></span></div>
+              <div class="app-head"><span class="me"><span class="avatar">A</span>Novčić Basic</span><span>€0.00 per month</span></div>
+              <div class="balance"><small>Euro account</small><div class="amt">€ 412.60</div><span class="pill">Debit card active</span></div>
+              <div class="quick">
+                <div><i><svg class="ico"><use href="#i-send"/></svg></i>Send</div>
+                <div><i><svg class="ico"><use href="#i-plus"/></svg></i>Add</div>
+                <div><i><svg class="ico"><use href="#i-card"/></svg></i>Card</div>
+                <div><i><svg class="ico"><use href="#i-dots"/></svg></i>More</div>
+              </div>
+              <div class="feed">
+                <div class="row"><i><svg class="ico"><use href="#i-send"/></svg></i><div><b>Sent to a friend</b><span>Arrived instantly</span></div></div>
+                <div class="row"><i><svg class="ico"><use href="#i-cash"/></svg></i><div><b>Cash withdrawal</b><span>Fee €1.50</span></div></div>
+                <div class="row"><i><svg class="ico"><use href="#i-target"/></svg></i><div><b>Savings goal</b><span>Put aside automatically</span></div></div>
               </div>
             </div>
           </div>
-          <div class="paycard">
-            <div class="name">Novčić<span>Pay</span></div>
-            <svg class="ico wave"><use href="#i-wave"/></svg>
-            <div class="emv"></div>
-            <div class="type">Debit</div>
+          <div class="float f-goal"><svg class="ring" viewBox="0 0 54 54"><circle class="bg" cx="27" cy="27" r="22"/><circle class="fg" cx="27" cy="27" r="22"/></svg><div><b>Summer trip</b><span>64% of your goal</span></div></div>
+          <div class="float f-fee">
+            <div class="t"><svg class="ico"><use href="#i-eye"/></svg>Before you pay</div>
+            <div class="l"><span>Currency</span><b>USD</b></div>
+            <div class="l"><span>Fee</span><b>1.5% above ECB</b></div>
+            <div class="go">Confirm</div>
           </div>
+          <div class="pcard"><div class="card3d"><div class="brandname">Novčić<b>Pay</b></div><svg class="ico wave"><use href="#i-wave"/></svg><div class="emv"></div><div class="tier">Basic</div><div class="kind">Debit</div></div></div>
+        </div>
         </div>
       </div>
     </section>
 
-    <section class="trust" aria-label="At a glance">
-      <div class="wrap">
-        <ul>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg><span><b>Licensed e-money company</b>Novčić Pay d.o.o., Zagreb</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg><span><b>Every fee in one document</b>before you open the account</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-eye"/></svg><span><b>Fees shown before you pay</b>as a percentage above the ECB rate</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg><span><b>Plans you can cancel</b>at the end of any month</span></li>
-        </ul>
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <ul><li>€0.00 per month</li><li>Cash withdrawal €1.50</li><li>1.5% above the ECB rate</li><li>Plus €3.99 per month</li><li>Travel €6.99 per month</li><li>Every fee shown before you pay</li><li>Cancel plans monthly</li></ul>
+        <ul><li>€0.00 per month</li><li>Cash withdrawal €1.50</li><li>1.5% above the ECB rate</li><li>Plus €3.99 per month</li><li>Travel €6.99 per month</li><li>Every fee shown before you pay</li><li>Cancel plans monthly</li></ul>
       </div>
-    </section>
+    </div>
 
     <section id="benefits">
       <div class="wrap">
-        <span class="kicker">Benefits</span>
-        <h2>Why Novčić Pay</h2>
-        <p class="intro">Built for the way people aged 18 to 26 actually use money: a card for everyday payments, a quick way to split a bill, and a place to save for the next trip.</p>
-        <div class="grid3">
-          <div class="card">
-            <span class="badge" aria-hidden="true"><svg class="ico"><use href="#i-card"/></svg></span>
+        <div class="head reveal">
+          <div><span class="eyebrow">Benefits</span><h2>Why Novčić Pay</h2></div>
+          <p>Built for the way people aged 18 to 26 actually use money: a card for everyday payments, a quick way to split a bill, and a place to save for the next trip.</p>
+        </div>
+        <div class="bento">
+          <div class="tile t-zero reveal">
+            <div class="top"><div class="zero">€0<small>per month</small></div></div>
             <h3>Nothing to pay for holding the account</h3>
             <p>The account and the debit card cost €0 a month. You pay only for cash withdrawals and for payments in other currencies, and every fee is shown before you confirm.</p>
           </div>
-          <div class="card">
-            <span class="badge" aria-hidden="true"><svg class="ico"><use href="#i-send"/></svg></span>
+          <div class="tile t-send reveal" style="--d:.08s">
+            <div class="top"><div class="chat" aria-hidden="true"><div class="b">Dinner was great. Split it?</div><div class="b me"><svg class="ico"><use href="#i-bolt"/></svg>Sent · arrived instantly</div><div class="b">Got it, thanks!</div></div></div>
             <h3>Instant transfers to friends</h3>
             <p>Split the dinner, the rent or the festival tickets in seconds. Money arrives instantly between Novčić Pay accounts.</p>
           </div>
-          <div class="card">
-            <span class="badge" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span>
+          <div class="tile t-save reveal">
+            <div class="top"><div class="bigring" aria-hidden="true"><svg viewBox="0 0 150 150"><circle class="bg" cx="75" cy="75" r="62"/><circle class="fg" cx="75" cy="75" r="62"/></svg><span>64%</span></div></div>
             <h3>Savings goals that stick</h3>
             <p>Set a goal, put money aside automatically, and watch it grow. The plans add shared accounts, virtual cards and a travel package when you need them.</p>
+          </div>
+          <div class="tile t-clear reveal" style="--d:.08s">
+            <div class="copy">
+              <h3>A price list you can read in one minute</h3>
+              <p>Before you open the account you get one document with every fee. In the app, a fee in another currency is shown as a percentage above the ECB rate before you confirm.</p>
+            </div>
+            <div class="receipt" aria-hidden="true">
+              <div class="t"><svg class="ico"><use href="#i-eye"/></svg>Before you pay</div>
+              <div class="l"><span>Payment in another currency</span><b>USD</b></div>
+              <div class="l"><span>Conversion fee</span><b>1.5% above the ECB rate</b></div>
+              <div class="l"><span>With Travel</span><b>0%</b></div>
+              <div class="go">Confirm payment</div>
+            </div>
           </div>
         </div>
       </div>
@@ -379,24 +522,26 @@
 
     <section id="how">
       <div class="wrap">
-        <span class="kicker">Three steps</span>
-        <h2>How it works</h2>
-        <div class="grid3 steps">
-          <div class="card"><div class="num" aria-hidden="true">1</div><span class="badge" aria-hidden="true"><svg class="ico"><use href="#i-phone"/></svg></span><h3>Open the account in the app</h3><p>Confirm your identity with your ID card. Before you open it, you receive the fee information document that lists every fee.</p></div>
-          <div class="card"><div class="num" aria-hidden="true">2</div><span class="badge" aria-hidden="true"><svg class="ico"><use href="#i-card"/></svg></span><h3>Get your euro account and card</h3><p>Your account is ready at once; the debit card follows by post. Use the virtual card in the meantime if you choose Plus or Travel.</p></div>
-          <div class="card"><div class="num" aria-hidden="true">3</div><span class="badge" aria-hidden="true"><svg class="ico"><use href="#i-send"/></svg></span><h3>Pay, transfer and save</h3><p>Pay with the card, send money to friends instantly and set your savings goals. Add Plus or Travel at any time, and cancel monthly.</p></div>
+        <span class="eyebrow reveal">Three steps</span>
+        <h2 class="reveal">How it works</h2>
+        <div class="steps">
+          <div class="step reveal"><div class="n" aria-hidden="true">01</div><h3>Open the account in the app</h3><p>Confirm your identity with your ID card. Before you open it, you receive the fee information document that lists every fee.</p><span class="tagline"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg>Every fee in one document</span></div>
+          <div class="step reveal" style="--d:.1s"><div class="n" aria-hidden="true">02</div><h3>Get your euro account and card</h3><p>Your account is ready at once; the debit card follows by post. Use the virtual card in the meantime if you choose Plus or Travel.</p><span class="tagline"><svg class="ico" aria-hidden="true"><use href="#i-card"/></svg>Account ready at once</span></div>
+          <div class="step reveal" style="--d:.2s"><div class="n" aria-hidden="true">03</div><h3>Pay, transfer and save</h3><p>Pay with the card, send money to friends instantly and set your savings goals. Add Plus or Travel at any time, and cancel monthly.</p><span class="tagline"><svg class="ico" aria-hidden="true"><use href="#i-bolt"/></svg>Add or cancel a plan monthly</span></div>
         </div>
       </div>
     </section>
 
     <section id="pricing">
       <div class="wrap">
-        <span class="kicker">Three offers, every fee on this page</span>
-        <h2>Pricing</h2>
-        <p class="value">Keep the account at €0 — add Plus or Travel when you need more.</p>
+        <div class="head reveal">
+          <div><span class="eyebrow">Three offers, every fee on this page</span><h2>Pricing</h2></div>
+          <p class="value">Keep the account at €0 — add Plus or Travel when you need more.</p>
+        </div>
         <div class="plans">
-          <div class="plan">
-            <div class="head"><span class="badge" aria-hidden="true"><svg class="ico"><use href="#i-card"/></svg></span><h3>Basic</h3></div>
+          <div class="plan reveal">
+            <div class="art" aria-hidden="true"><div class="card3d light"><div class="brandname">Novčić<b>Pay</b></div><svg class="ico wave"><use href="#i-wave"/></svg><div class="emv"></div><div class="tier">Basic</div><div class="kind">Debit</div></div></div>
+            <h3>Basic</h3>
             <div class="for">For everyone aged 18–26; the default account</div>
             <div class="price">€0.00</div>
             <div class="unit">per month</div>
@@ -407,10 +552,11 @@
               <li class="fee"><svg class="ico" aria-hidden="true"><use href="#i-cash"/></svg><span>Cash withdrawal <strong>€1.50</strong> each</span></li>
               <li class="fee"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg><span>Payments in other currencies <strong>1.5% above the ECB rate</strong></span></li>
             </ul>
-            <a class="btn ghost" href="#contact">Choose Basic</a>
+            <a class="btn line" href="#contact">Choose Basic</a>
           </div>
-          <div class="plan">
-            <div class="head"><span class="badge" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span><h3>Plus</h3></div>
+          <div class="plan reveal" style="--d:.1s">
+            <div class="art" aria-hidden="true"><div class="card3d"><div class="brandname">Novčić<b>Pay</b></div><svg class="ico wave"><use href="#i-wave"/></svg><div class="emv"></div><div class="tier">Plus</div><div class="kind">Debit</div></div></div>
+            <h3>Plus</h3>
             <div class="for">For people who use cash and want more control over their money</div>
             <div class="price">€3.99</div>
             <div class="unit">per month</div>
@@ -421,11 +567,11 @@
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span>Virtual cards</span></li>
               <li class="fee"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg><span>Payments in other currencies 1.5% above the ECB rate</span></li>
             </ul>
-            <a class="btn ghost" href="#contact">Choose Plus</a>
+            <a class="btn line" href="#contact">Choose Plus</a>
           </div>
-          <div class="plan recommended">
-            <div class="tag">Recommended</div>
-            <div class="head"><span class="badge" aria-hidden="true"><svg class="ico"><use href="#i-globe"/></svg></span><h3>Travel</h3></div>
+          <div class="plan recommended reveal" style="--d:.2s">
+            <div class="art" aria-hidden="true"><div class="card3d black"><div class="brandname">Novčić<b>Pay</b></div><svg class="ico wave"><use href="#i-wave"/></svg><div class="emv"></div><div class="tier">Travel</div><div class="kind">Debit</div></div></div>
+            <h3>Travel <span class="tag">Recommended</span></h3>
             <div class="for">For people who study or work abroad or travel often</div>
             <div class="price">€6.99</div>
             <div class="unit">per month</div>
@@ -435,42 +581,48 @@
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Cash withdrawals worldwide included</strong></span></li>
               <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Travel insurance included</strong></span></li>
             </ul>
-            <a class="btn" href="#contact">Choose Travel</a>
+            <a class="btn primary" href="#contact">Choose Travel</a>
           </div>
         </div>
         <p class="conditions">Plans are billed monthly and can be cancelled at the end of any month. Travel is also available for a year at €69.90 (the price of ten months). Account fees are exempt from VAT; all prices are final.</p>
 
-        <div class="compare" aria-label="Comparison for a typical travelling month">
-          <h3>What a typical travelling month costs</h3>
-          <p class="note">€800 of card payments, €400 of them in other currencies, two cash withdrawals abroad, and travel insurance. Published prices of the alternatives as named in our market study; your own usage may differ.</p>
-          <table>
-            <thead><tr><th>Account</th><th class="n">Currency fees</th><th class="n">Withdrawals</th><th class="n">Insurance</th><th class="n">Per month</th></tr></thead>
-            <tbody>
-              <tr class="us"><td>Novčić Travel<span class="meter" aria-hidden="true"><i style="width:30%"></i></span></td><td class="n">€0.00</td><td class="n">€0.00</td><td class="n">included</td><td class="n">€6.99</td></tr>
-              <tr><td>Novčić Basic (pay per use)<span class="meter" aria-hidden="true"><i style="width:57%"></i></span></td><td class="n">€6.00</td><td class="n">€3.00</td><td class="n">about €4.00</td><td class="n">€13.00</td></tr>
-              <tr><td>International app, no plan<span class="meter" aria-hidden="true"><i style="width:52%"></i></span></td><td class="n">€4.00</td><td class="n">€4.00</td><td class="n">about €4.00</td><td class="n">€12.00</td></tr>
-              <tr><td>Bank account package<span class="meter" aria-hidden="true"><i style="width:100%"></i></span></td><td class="n">€10.00</td><td class="n">€2.00–4.00</td><td class="n">about €4.00</td><td class="n">€19.00–23.00</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="duo">
+          <div class="compare reveal" aria-label="Comparison for a typical travelling month">
+            <h3>What a typical travelling month costs</h3>
+            <p class="note">€800 of card payments, €400 of them in other currencies, two cash withdrawals abroad, and travel insurance. Published prices of the alternatives as named in our market study; your own usage may differ.</p>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>Account</th><th class="n">Currency fees</th><th class="n">Withdrawals</th><th class="n">Insurance</th><th class="n">Per month</th></tr></thead>
+                <tbody>
+                  <tr class="us"><td>Novčić Travel<span class="meter" aria-hidden="true"><i style="--w:30%"></i></span></td><td class="n">€0.00</td><td class="n">€0.00</td><td class="n">included</td><td class="n total">€6.99</td></tr>
+                  <tr><td>Novčić Basic (pay per use)<span class="meter" aria-hidden="true"><i style="--w:57%"></i></span></td><td class="n">€6.00</td><td class="n">€3.00</td><td class="n">about €4.00</td><td class="n total">€13.00</td></tr>
+                  <tr><td>International app, no plan<span class="meter" aria-hidden="true"><i style="--w:52%"></i></span></td><td class="n">€4.00</td><td class="n">€4.00</td><td class="n">about €4.00</td><td class="n total">€12.00</td></tr>
+                  <tr><td>Bank account package<span class="meter" aria-hidden="true"><i style="--w:100%"></i></span></td><td class="n">€10.00</td><td class="n">€2.00–4.00</td><td class="n">about €4.00</td><td class="n total">€19.00–23.00</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-        <div class="calc" aria-label="Price calculator">
-          <h3><svg class="ico" aria-hidden="true"><use href="#i-calc"/></svg>What would your month cost?</h3>
-          <div class="fields">
+          <div class="calc reveal" style="--d:.1s" aria-label="Price calculator">
+            <div class="in">
+            <h3>What would your month cost?</h3>
             <label>Cash withdrawals a month
               <input id="calc-wd" type="number" inputmode="numeric" min="0" step="1" value="2">
             </label>
             <label>Card payments in other currencies a month, in euros
               <input id="calc-fx" type="number" inputmode="decimal" min="0" step="10" value="50">
             </label>
+            </div>
+            <div class="outp">
+            <div class="results" aria-live="polite">
+              <div class="res" id="res-basic"><div class="name">Basic</div><div class="amount" id="out-basic">€3.75</div></div>
+              <div class="res" id="res-plus"><div class="name">Plus</div><div class="amount" id="out-plus">€4.74</div></div>
+              <div class="res" id="res-travel"><div class="name">Travel</div><div class="amount" id="out-travel">€6.99</div></div>
+            </div>
+            <p class="verdict" id="calc-verdict">Your monthly price is lowest on Basic.</p>
+            </div>
+            <p class="note">Your monthly price = monthly plan price + €1.50 for each cash withdrawal that is not included + 1.5% above the ECB rate on payments in other currencies (0% in Travel). Plus also adds shared accounts and virtual cards; Travel also adds travel insurance.</p>
           </div>
-          <div class="results" aria-live="polite">
-            <div class="res" id="res-basic"><div class="name">Basic</div><div class="amount" id="out-basic">€3.75</div></div>
-            <div class="res" id="res-plus"><div class="name">Plus</div><div class="amount" id="out-plus">€4.74</div></div>
-            <div class="res" id="res-travel"><div class="name">Travel</div><div class="amount" id="out-travel">€6.99</div></div>
-          </div>
-          <p class="verdict" id="calc-verdict">Your monthly price is lowest on Basic.</p>
-          <p class="note">Your monthly price = monthly plan price + €1.50 for each cash withdrawal that is not included + 1.5% above the ECB rate on payments in other currencies (0% in Travel). Plus also adds shared accounts and virtual cards; Travel also adds travel insurance.</p>
         </div>
 
         <p class="analysis">How these prices were set: <a href="dashboard/">read the pricing analysis →</a></p>
@@ -479,26 +631,26 @@
 
     <section id="faq" class="faq">
       <div class="wrap">
-        <div class="side">
-          <span class="kicker">FAQ</span>
+        <div class="side reveal">
+          <span class="eyebrow">FAQ</span>
           <h2>Questions</h2>
           <p>Four things people ask before they open the account.</p>
         </div>
-        <div>
+        <div class="reveal" style="--d:.1s">
           <details>
-            <summary>Is the Basic account free?<svg class="ico" aria-hidden="true"><use href="#i-down"/></svg></summary>
+            <summary>Is the Basic account free?<i aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></i></summary>
             <p>The Basic account has no monthly fee. You pay €1.50 for each cash withdrawal and 1.5% above the ECB reference rate on payments in other currencies, so we do not call it free. Everything else in Basic is included.</p>
           </details>
           <details>
-            <summary>How do I see the fees before I pay?<svg class="ico" aria-hidden="true"><use href="#i-down"/></svg></summary>
+            <summary>How do I see the fees before I pay?<i aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></i></summary>
             <p>Before you open the account you receive a fee information document that lists every fee under its standard name. In the app, the currency conversion fee is shown as a percentage above the ECB reference rate before you confirm a payment. Once a year you receive a statement of all fees you paid.</p>
           </details>
           <details>
-            <summary>Can I switch between Basic, Plus and Travel?<svg class="ico" aria-hidden="true"><use href="#i-down"/></svg></summary>
+            <summary>Can I switch between Basic, Plus and Travel?<i aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></i></summary>
             <p>Yes. Plans are billed monthly and can be cancelled at the end of any month; you then return to Basic. If you choose the annual Travel plan, it runs for twelve months at €69.90.</p>
           </details>
           <details>
-            <summary>What happens to the 3 included withdrawals in Plus?<svg class="ico" aria-hidden="true"><use href="#i-down"/></svg></summary>
+            <summary>What happens to the 3 included withdrawals in Plus?<i aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></i></summary>
             <p>The first three cash withdrawals in a calendar month are included in Plus. From the fourth withdrawal the Basic fee of €1.50 applies. In Travel, cash withdrawals worldwide are included.</p>
           </details>
         </div>
@@ -506,27 +658,37 @@
     </section>
 
     <section id="contact" class="contact">
-      <div class="wrap">
-        <div>
-          <h2>Contact</h2>
-          <p>Questions about the account or the plans? Write to us and we answer within one working day.</p>
-        </div>
-        <div class="box">
-          <a href="mailto:hello@novcicpay.example"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>hello@novcicpay.example</a>
-          <p>Novčić Pay d.o.o., Zagreb — a licensed e-money company.</p>
-        </div>
+      <div class="wrap reveal">
+        <span class="eyebrow">Contact</span>
+        <h2>Contact</h2>
+        <p>Questions about the account or the plans? Write to us and we answer within one working day.</p>
+        <a class="btn dark mail" href="mailto:hello@novcicpay.example"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>hello@novcicpay.example</a>
+        <p class="legal">Novčić Pay d.o.o., Zagreb — a licensed e-money company.</p>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <span>© 2026 Novčić Pay — student project, fictitious company</span>
-      <a href="dashboard/">Pricing analysis</a>
+      <div class="top">
+        <a class="logo" href="#top"><span class="coin" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M10 23V9l12 14V9"/></svg></span><span>Novčić<b>Pay</b></span></a>
+        <div class="links"><a href="#benefits">Benefits</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+      </div>
+      <div class="bottom">
+        <span>© 2026 Novčić Pay — student project, fictitious company</span>
+        <a href="dashboard/">Pricing analysis</a>
+      </div>
     </div>
   </footer>
   <script>
     (function () {
+      document.documentElement.className += " js";
+      var items = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+        items.forEach(function (el) { io.observe(el); });
+      } else { items.forEach(function (el) { el.classList.add("in"); }); }
+
       var wd = document.getElementById("calc-wd"), fx = document.getElementById("calc-fx");
       var out = { basic: document.getElementById("out-basic"), plus: document.getElementById("out-plus"), travel: document.getElementById("out-travel") };
       var box = { basic: document.getElementById("res-basic"), plus: document.getElementById("res-plus"), travel: document.getElementById("res-travel") };
