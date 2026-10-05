@@ -27,7 +27,7 @@
     <p class="lead">The base case takes the survey at face value. This page asks how wrong it can be: one assumption at a time, all at once, and under three events from outside.</p>
   </section>
   
-<div class="tiles"><div class="tile"><div class="mono">Base case</div><div class="big">€184k</div><div class="sub">the survey at face value, behaviour unchanged</div></div><div class="tile"><div class="mono">Median, 5 assumptions varied</div><div class="big">€55k</div><div class="sub">mean €53k; 5th–95th percentile −€26k to €126k</div></div><div class="tile"><div class="mono">Chance of a loss</div><div class="big">13%</div><div class="sub">one fee for everyone: 69%; fees per use only: 97%</div></div><div class="tile"><div class="mono">Tightest limit</div><div class="big">€1.29</div><div class="sub">cost per withdrawal at which profit is zero if the fee stays at €1.50</div></div></div>
+<div class="tiles"><div class="tile"><div class="mono">Base case</div><div class="big">€184k</div><div class="sub">the survey at face value, behaviour unchanged</div></div><div class="tile"><div class="mono">Median, 5 assumptions varied</div><div class="big">€55k</div><div class="sub">mean €53k; 5th–95th percentile −€26k to €126k</div></div><div class="tile"><div class="mono">Simulated years with a loss</div><div class="big">13%</div><div class="sub">one fee for everyone: 69%; fees per use only: 97%</div></div><div class="tile"><div class="mono">Tightest limit</div><div class="big">€1.29</div><div class="sub">cost per withdrawal at which profit is zero if the fee stays at €1.50</div></div></div>
 <section id="simulator"><h2>Move the assumptions yourself</h2><p class="intro">Every assumption that is not a case fact can be changed here. Start with the first slider: it is the one the case says least about.</p><article class="card "><h3>What happens to the 2027 profit</h3>
 <div class="sim" id="sim">
   <div class="ctl">
@@ -121,7 +121,7 @@
 <text x="360.0" y="294" text-anchor="middle" class="lbl sm">profit after fixed costs, 5,000 simulated years</text>
 </svg></div><p class="decision"><span class="mono">Decision</span>The median is €55k, about a third of the base case, and 13% of the simulated years end in a loss. The base case sits at the right edge because four of the five ranges can only move against it.</p><p class="note">Triangular distributions, drawn independently; seed fixed, so the workbook reproduces every draw with its own formulas.</p><p class="src">Workbook · Stress test · block C</p></article><article class="card "><h3>The same draws applied to the alternatives</h3><div class="cw"><svg class="chart wide" viewBox="0 0 720 234" role="img" aria-label="simulated profit range by price structure">
 <line x1="476.4" y1="0" x2="476.4" y2="208" class="axis dashed"/><text x="476.4" y="226" text-anchor="middle" class="lbl sm">break-even</text>
-<text x="712" y="226" text-anchor="end" class="lbl sm">chance of a loss</text>
+<text x="712" y="226" text-anchor="end" class="lbl sm">simulated years with a loss</text>
 <text x="198" y="25.0" text-anchor="end" class="lbl">E · Recommended</text>
 <rect x="460.3" y="10" width="93.5" height="20" rx="3" class="bar"/>
 <rect x="508.4" y="6" width="4" height="28" rx="1" class="bar hi"/>
