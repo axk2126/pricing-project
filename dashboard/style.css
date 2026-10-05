@@ -40,7 +40,7 @@ li{margin:.3em 0}
 strong{font-weight:600}
 .ico{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:-4px}
 .brand{display:inline-flex;align-items:center}
-.brand .mark{width:28px;height:28px;border-radius:8px;background:var(--d1);display:inline-flex;align-items:center;justify-content:center;margin-right:10px}
+.brand .mark{width:28px;height:28px;border-radius:50%;background:#FFC83D;box-shadow:inset 0 0 0 2.5px rgba(7,28,43,.16);display:inline-flex;align-items:center;justify-content:center;margin-right:10px}
 .brand .mark svg{width:16px;height:16px;fill:none;stroke:var(--deep);stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
 .lab{display:flex;align-items:center;gap:9px}
 .lab .ico{color:var(--d2);width:18px;height:18px}
